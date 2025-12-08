@@ -1,0 +1,11 @@
+ID,materialCode,materialDescription,uom,standardPrice,salesPrice,gstPercent,isActive,createdAt,createdBy,modifiedAt,modifiedBy
+MAT001,MAT-1001,Steel Rod 10mm,KG,120.00,150.00,18,true,2025-01-01T10:00:00,system,2025-01-01T10:00:00,system
+MAT002,MAT-1002,Copper Sheet 1mm,KG,450.00,520.00,18,true,2025-01-02T11:10:00,admin,2025-01-02T11:10:00,admin
+MAT003,MAT-1003,Aluminium Pipe 2 inch,EA,250.00,300.00,12,true,2025-01-03T09:45:00,system,2025-01-03T09:45:00,system
+MAT004,MAT-1004,Plastic Granules,KG,80.00,110.00,18,true,2025-01-04T14:20:00,manager,2025-01-04T14:20:00,manager
+MAT005,MAT-1005,Iron Screws Pack,PK,50.00,75.00,5,true,2025-01-05T08:30:00,system,2025-01-05T08:30:00,system
+MAT006,MAT-1006,Wooden Pallet Std Size,EA,300.00,380.00,12,true,2025-01-06T15:00:00,admin,2025-01-06T15:00:00,admin
+MAT007,MAT-1007,HDPE Sheet 5mm,KG,180.00,225.00,18,true,2025-01-07T10:10:00,system,2025-01-07T10:10:00,system
+MAT008,MAT-1008,Nylon Rope 20m,EA,90.00,120.00,12,true,2025-01-08T13:45:00,manager,2025-01-08T13:45:00,manager
+MAT009,MAT-1009,Steel Bolts M10,PK,70.00,95.00,5,true,2025-01-09T11:25:00,admin,2025-01-09T11:25:00,admin
+MAT010,MAT-1010,Gear Lubricant Oil 1L,LTR,220.00,260.00,18,true,2025-01-10T16:00:00,system,2025-01-10T16:00:00,system

@@ -1,0 +1,11 @@
+ID,vendorCode,vendorName,address_vm_street,address_vm_city,address_vm_state,address_vm_country,address_vm_postal,gstNo,phone,email,isActive,createdAt,createdBy,modifiedAt,modifiedBy
+VEND001,VEN1001,Alpha Supplies,"MG Road","Bangalore","Karnataka","India","560001",29ABCDE1234F1Z5,9876543210,alpha@supplies.com,true,2025-01-05T10:00:00,system,2025-01-05T10:00:00,system
+VEND002,VEN1002,Global Traders,"Park Street","Kolkata","West Bengal","India","700016",19GHYTR5678H2Z3,9123456780,global@traders.com,true,2025-01-06T11:20:00,admin,2025-01-06T11:20:00,admin
+VEND003,VEN1003,Star Industries,"Anna Nagar","Chennai","Tamil Nadu","India","600040",33POIUY9876K5Z7,9988776655,star@industries.com,true,2025-01-07T09:45:00,system,2025-01-07T09:45:00,system
+VEND004,VEN1004,Prime Distributors,"Abids","Hyderabad","Telangana","India","500001",36LKJHG5432J7Z9,9876501234,prime@distributors.com,false,2025-01-08T12:30:00,manager,2025-01-08T12:30:00,manager
+VEND005,VEN1005,Sunrise Traders,"FC Road","Pune","Maharashtra","India","411004",27QWERT2345L2Z4,9090909090,sunrise@traders.com,true,2025-01-09T14:10:00,system,2025-01-09T14:10:00,system
+VEND006,VEN1006,Metro Components,"Sector 18","Noida","Uttar Pradesh","India","201301",09ASDFG4532M4Z6,9456781230,metro@components.com,true,2025-01-10T16:25:00,admin,2025-01-10T16:25:00,admin
+VEND007,VEN1007,NorthEast Supplies,"Beltola","Guwahati","Assam","India","781028",18ZXCVB7812N3Z2,9876123450,northeast@supplies.com,true,2025-01-11T10:15:00,system,2025-01-11T10:15:00,system
+VEND008,VEN1008,Shakti Metals,"MI Road","Jaipur","Rajasthan","India","302001",08MNBVC3412B1Z8,9988001122,shakti@metals.com,false,2025-01-12T13:40:00,manager,2025-01-12T13:40:00,manager
+VEND009,VEN1009,Elite Electronics,"Linking Road","Mumbai","Maharashtra","India","400050",27TYUIO7890C3Z5,9765432100,elite@electronics.com,true,2025-01-13T09:50:00,system,2025-01-13T09:50:00,system
+VEND010,VEN1010,Silver Solutions,"Ashok Nagar","Vijayawada","Andhra Pradesh","India","520007",37GHJKL5623D4Z9,9877001100,silver@solutions.com,true,2025-01-14T15:35:00,admin,2025-01-14T15:35:00,admin

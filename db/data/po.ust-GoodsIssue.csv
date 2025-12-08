@@ -1,0 +1,12 @@
+ID,delivery_ID,giNumber,giDateTime,postedBy,postingStatus,remarks,createdAt,createdBy,modifiedAt,modifiedBy
+GI001,DEL001,GI1001,2025-01-05T10:20:00,system,SUCCESS,Goods issued successfully,2025-01-05T10:20:30,system,2025-01-05T10:20:30,system
+GI002,DEL002,GI1002,2025-01-06T11:10:00,admin,SUCCESS,Shipment cleared and posted,2025-01-06T11:10:40,admin,2025-01-06T11:10:40,admin
+GI003,DEL003,GI1003,2025-01-07T14:45:00,manager,ERROR,Stock mismatch during GI,2025-01-07T14:45:30,manager,2025-01-07T14:45:30,manager
+GI004,DEL004,GI1004,2025-01-08T09:30:00,system,SUCCESS,Goods issued to transporter,2025-01-08T09:30:25,system,2025-01-08T09:30:25,system
+GI005,DEL005,GI1005,2025-01-09T16:10:00,admin,SUCCESS,Delivery posted without issues,2025-01-09T16:10:50,admin,2025-01-09T16:10:50,admin
+GI006,DEL006,GI1006,2025-01-10T12:00:00,system,ERROR,Batch validation failed,2025-01-10T12:00:40,system,2025-01-10T12:00:40,system
+GI007,DEL007,GI1007,2025-01-11T15:25:00,manager,SUCCESS,Goods issue completed,2025-01-11T15:25:10,manager,2025-01-11T15:25:10,manager
+GI008,DEL008,GI1008,2025-01-12T10:40:00,system,SUCCESS,Goods moved to dispatch,2025-01-12T10:40:30,system,2025-01-12T10:40:30,system
+GI009,DEL009,GI1009,2025-01-13T13:55:00,admin,SUCCESS,GI posted to inventory,2025-01-13T13:55:45,admin,2025-01-13T13:55:45,admin
+GI010,DEL010,GI1010,2025-01-14T11:35:00,system,ERROR,Quantity mismatch detected,2025-01-14T11:35:20,system,2025-01-14T11:35:20,system
+

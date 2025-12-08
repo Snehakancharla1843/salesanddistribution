@@ -1,0 +1,11 @@
+ID,poNumber,vendor_ID,documentDate,deliveryDate,currency,paymentTerms,totalValue,status,remarks,createdAt,createdBy,modifiedAt,modifiedBy
+POH001,PO1001,VEND001,2025-01-02,2025-01-10,INR,30Days,45000,approved,PO approved and released,2025-01-02T10:10:10,system,2025-01-02T10:10:10,system
+POH002,PO1002,VEND002,2025-01-03,2025-01-12,INR,45Days,32000,draft,Pending vendor confirmation,2025-01-03T11:12:50,admin,2025-01-03T11:12:50,admin
+POH003,PO1003,VEND003,2025-01-04,2025-01-15,INR,30Days,28000,submitted,Awaiting approval,2025-01-04T09:45:00,system,2025-01-04T09:45:00,system
+POH004,PO1004,VEND004,2025-01-05,2025-01-18,INR,30Days,51000,approved,Approved by manager,2025-01-05T14:20:30,manager,2025-01-05T14:20:30,manager
+POH005,PO1005,VEND005,2025-01-06,2025-01-20,INR,45Days,15000,rejected,Vendor price mismatch,2025-01-06T13:55:15,admin,2025-01-06T13:55:15,admin
+POH006,PO1006,VEND006,2025-01-07,2025-01-22,INR,30Days,67000,approved,High-value PO approved,2025-01-07T10:25:10,system,2025-01-07T10:25:10,system
+POH007,PO1007,VEND007,2025-01-08,2025-01-23,INR,30Days,23000,draft,Initial draft created,2025-01-08T15:40:40,system,2025-01-08T15:40:40,system
+POH008,PO1008,VEND008,2025-01-09,2025-01-24,INR,30Days,42000,submitted,Sent for approval,2025-01-09T11:25:55,admin,2025-01-09T11:25:55,admin
+POH009,PO1009,VEND009,2025-01-10,2025-01-28,INR,N/A,39000,cancelled,PO cancelled by buyer,2025-01-10T16:00:20,system,2025-01-10T16:00:20,system
+POH010,PO1010,VEND010,2025-01-11,2025-01-30,INR,30Days,52000,approved,Vendor terms accepted,2025-01-11T10:33:33,manager,2025-01-11T10:33:33,manager

@@ -1,0 +1,12 @@
+ID,billing_ID,customer_ID,paymentNumber,paymentDate,paymentMethod,paymentAmount,currency,status,referenceText,createdAt,createdBy,modifiedAt,modifiedBy
+GP001,DEL001,2025-01-05T09:45:00,Warehouse-A,John Doe,Goods picked without issues,2025-01-05T09:45:20,system,2025-01-05T09:45:20,system
+GP002,DEL002,2025-01-06T10:30:00,Warehouse-B,Ravi Kumar,Pickup completed successfully,2025-01-06T10:30:40,admin,2025-01-06T10:30:40,admin
+GP003,DEL003,2025-01-07T14:00:00,Loading Dock-2,Maria Lopez,Delay due to packaging,2025-01-07T14:00:25,manager,2025-01-07T14:00:25,manager
+GP004,DEL004,2025-01-08T08:55:00,Warehouse-C,Arun Singh,Goods picked and verified,2025-01-08T08:55:15,system,2025-01-08T08:55:15,system
+GP005,DEL005,2025-01-09T15:40:00,Dispatch-Bay 3,David John,Minor delay due to shortage,2025-01-09T15:40:50,admin,2025-01-09T15:40:50,admin
+GP006,DEL006,2025-01-10T11:10:00,Loading Dock-1,Michael Rao,Loaded into vehicle,2025-01-10T11:10:20,system,2025-01-10T11:10:20,system
+GP007,DEL007,2025-01-11T16:25:00,Warehouse-A,Sameer Khan,Pickup completed smoothly,2025-01-11T16:25:35,manager,2025-01-11T16:25:35,manager
+GP008,DEL008,2025-01-12T09:20:00,Warehouse-D,Chris Paul,Goods moved to transport area,2025-01-12T09:20:45,system,2025-01-12T09:20:45,system
+GP009,DEL009,2025-01-13T13:15:00,Dispatch-Bay 1,Pooja Mehta,Pickup verified and sealed,2025-01-13T13:15:30,admin,2025-01-13T13:15:30,admin
+GP010,DEL010,2025-01-14T10:05:00,Loading Dock-4,Daniel Lee,Goods ready for shipment,2025-01-14T10:05:20,system,2025-01-14T10:05:20,system
+

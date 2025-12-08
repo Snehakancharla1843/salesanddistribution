@@ -1,0 +1,18 @@
+ID,inquiry_ID,material_ID,lineItemNo,requestedQuantity_order_quan,uom,targetPrice,status,notes,createdAt,createdBy,modifiedAt,modifiedBy
+SII001,SIH001,MAT001,1,50,KG,120.00,open,Customer wants bulk price,2025-01-02T10:15:00,system,2025-01-02T10:15:00,system
+SII002,SIH001,MAT002,2,20,KG,240.00,open,Second item added by customer,2025-01-02T10:20:00,system,2025-01-02T10:20:00,system
+
+SII003,SIH002,MAT003,1,15,PC,450.00,inProcess,Price being validated,2025-01-03T11:10:30,admin,2025-01-03T11:10:30,admin
+
+SII004,SIH003,MAT004,1,100,KG,95.00,open,Urgent requirement,2025-01-04T09:50:10,system,2025-01-04T09:50:10,system
+
+SII005,SIH004,MAT005,1,35,LTR,180.00,confirmed,Customer accepted quotation,2025-01-05T14:35:00,manager,2025-01-05T14:35:00,manager
+SII006,SIH004,MAT001,2,10,KG,130.00,confirmed,Add-on item requested,2025-01-05T14:37:00,manager,2025-01-05T14:37:00,manager
+
+SII007,SIH005,MAT002,1,25,KG,250.00,rejected,Quotation rejected by customer,2025-01-06T10:58:00,system,2025-01-06T10:58:00,system
+
+SII008,SIH006,MAT004,1,60,KG,100.00,open,Waiting for feasibility check,2025-01-07T15:15:00,admin,2025-01-07T15:15:00,admin
+
+SII009,SIH007,MAT003,1,40,PC,460.00,inProcess,Stock availability pending,2025-01-08T13:25:00,system,2025-01-08T13:25:00,system
+
+SII010,SIH008,MAT005,1,30,LTR,185.00,confirmed,Final quote accepted,2025-01-09T16:45:00,manager,2025-01-09T16:45:00,manager
