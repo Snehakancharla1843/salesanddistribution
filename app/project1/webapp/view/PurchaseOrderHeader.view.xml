@@ -1,0 +1,88 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  controllerName="project1.controller.PurchaseOrderHeader">
+
+  <Page id="_IDGenPage3" title="Purchase Order Header" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+
+      <Table
+        id="tblPOH"
+        growing="true"
+        mode="SingleSelectLeft"
+        items="{po>/PurchaseOrderHeader}">
+
+        <headerToolbar>
+          <Toolbar id="_IDGenToolbar">
+            <Title id="_IDGenTitle" text="Purchase Orders"/>
+            <ToolbarSpacer id="_IDGenToolbarSpacer"/>
+            <Button id="_IDGenButton" text="Create" type="Emphasized" press=".onCreate"/>
+            <Button id="_IDGenButton1" text="Delete" type="Negative" press=".onDelete"/>
+            <Button id="_IDGenButton2" text="Save" press=".onSave"/>
+            <Button id="_IDGenButton3" text="Cancel" press=".onCancel"/>
+          </Toolbar>
+        </headerToolbar>
+
+        <columns>
+          <Column id="_IDGenColumn15"><Text id="_IDGenText31" text="ID"/></Column>
+          <Column id="_IDGenColumn16"><Text id="_IDGenText32" text="PO Number"/></Column>
+          <Column id="_IDGenColumn17"><Text id="_IDGenText33" text="Vendor"/></Column>
+          <Column id="_IDGenColumn18"><Text id="_IDGenText34" text="Doc Date"/></Column>
+          <Column id="_IDGenColumn19"><Text id="_IDGenText35" text="Del Date"/></Column>
+          <Column id="_IDGenColumn20"><Text id="_IDGenText36" text="Currency"/></Column>
+          <Column id="_IDGenColumn103"><Text id="_IDGenText37" text="Payment Terms"/></Column>
+          <Column id="_IDGenColumn104"><Text id="_IDGenText38" text="Total"/></Column>
+          <Column id="_IDGenColumn105"><Text id="_IDGenText39" text="Status"/></Column>
+          <Column id="_IDGenColumn106"><Text id="_IDGenText40" text="Remarks"/></Column>
+        </columns>
+
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem1">
+            <cells>
+
+              <!-- ✅ UUID: display only -->
+              <Text id="_IDGenText41" text="{po>ID}"/>
+
+              <!-- editable -->
+              <Input id="_IDGenInput1" value="{po>poNumber}" placeholder="PO1001"/>
+
+              <!-- ✅ Association: vendor_ID is UUID -> pick by code/name -->
+              <ComboBox id="_IDGenComboBox"
+                selectedKey="{po>vendor_ID}"
+                items="{md>/VendorMaster}">
+                <core:Item id="_IDGenItem" key="{md>ID}" text="{md>vendorCode}"/>
+              </ComboBox>
+
+              <DatePicker id="_IDGenDatePicker" value="{po>documentDate}" valueFormat="yyyy-MM-dd" displayFormat="MMM d, yyyy"/>
+              <DatePicker id="_IDGenDatePicker1" value="{po>deliveryDate}" valueFormat="yyyy-MM-dd" displayFormat="MMM d, yyyy"/>
+
+              <Input id="_IDGenInput2" value="{po>currency}" placeholder="INR" width="5rem"/>
+
+              <Select id="_IDGenSelect" selectedKey="{po>paymentTerms}">
+                <core:Item id="_IDGenItem1" key="days30" text="30Days"/>
+                <core:Item id="_IDGenItem2" key="days45" text="45Days"/>
+                <core:Item id="_IDGenItem3" key="na"     text="N/A"/>
+              </Select>
+
+              <Input id="_IDGenInput3" value="{po>totalValue}" type="Number" placeholder="0.00"/>
+
+              <Select id="_IDGenSelect1" selectedKey="{po>status}">
+                <core:Item id="_IDGenItem4" key="draft"     text="draft"/>
+                <core:Item id="_IDGenItem5" key="submitted" text="submitted"/>
+                <core:Item id="_IDGenItem6" key="approved"  text="approved"/>
+                <core:Item id="_IDGenItem7" key="rejected"  text="rejected"/>
+                <core:Item id="_IDGenItem8" key="closed"    text="closed"/>
+                <core:Item id="_IDGenItem9" key="cancelled" text="cancelled"/>
+              </Select>
+
+              <Input id="_IDGenInput4" value="{po>remarks}" placeholder="Remarks"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+
+      </Table>
+
+    </content>
+  </Page>
+</mvc:View>

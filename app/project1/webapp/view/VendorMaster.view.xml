@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.VendorMaster">
+  <Page id="_IDGenPage1" title="Vendor Master" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable1" growing="true" items="{md>/VendorMaster}">
+        <columns>
+          <Column id="_IDGenColumn"><Text id="_IDGenText10" text="ID"/></Column>
+          <Column id="_IDGenColumn6"><Text id="_IDGenText11" text="Code"/></Column>
+          <Column id="_IDGenColumn7"><Text id="_IDGenText12" text="Name"/></Column>
+          <Column id="_IDGenColumn8"><Text id="_IDGenText13" text="GST"/></Column>
+          <Column id="_IDGenColumn9"><Text id="_IDGenText14" text="Active"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem2">
+            <cells>
+              <Text id="_IDGenText15" text="{md>ID}"/>
+              <Text id="_IDGenText16" text="{md>vendorCode}"/>
+              <Text id="_IDGenText17" text="{md>vendorName}"/>
+              <Text id="_IDGenText18" text="{md>gstNo}"/>
+              <Text id="_IDGenText19" text="{md>isActive}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

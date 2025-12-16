@@ -1,0 +1,45 @@
+/* Enter your custom styles here */
+
+/* More spacing between tiles */
+.tileLayout {
+  margin: 50px;
+}
+
+/* Rounded corners + padding + shadow */
+.tileLayout.sapMGT {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover */
+.tileLayout.sapMGT:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+}
+
+/* Inside padding */
+.tileLayout .sapMGTHdrContent,
+.tileLayout .sapMGTContent {
+  padding: 14px !important;
+}
+
+/* Gradient background */
+.tileLayout.sapMGT {
+  background: linear-gradient(135deg, #1438d7 0%, #764ba2 100%);
+}
+
+/* Make text and icons white */
+.tileLayout .sapMGTHdrTxt,
+.tileLayout .sapMGTHdrText,
+.tileLayout .sapMText,
+.tileLayout .sapUiIcon {
+  color: #fff !important;
+}
+
+/* Bigger icon */
+.tileLayout .sapMImageContent,
+.tileLayout .sapUiIcon {
+  font-size: 2rem !important;
+}

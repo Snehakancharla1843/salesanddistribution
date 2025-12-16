@@ -1,0 +1,29 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.SDAuditLog">
+  <Page id="_IDGenPage18" title="Audit Log" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable18" growing="true" items="{mon>/SDAuditLog}">
+        <columns>
+          <Column id="_IDGenColumn97"><Text id="_IDGenText30" text="ID"/></Column>
+          <Column id="_IDGenColumn98"><Text id="_IDGenText195" text="Object"/></Column>
+          <Column id="_IDGenColumn99"><Text id="_IDGenText196" text="Ref No"/></Column>
+          <Column id="_IDGenColumn100"><Text id="_IDGenText197" text="Type"/></Column>
+          <Column id="_IDGenColumn101"><Text id="_IDGenText198" text="Text"/></Column>
+          <Column id="_IDGenColumn102"><Text id="_IDGenText199" text="Status"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem19">
+            <cells>
+              <Text id="_IDGenText200" text="{mon>ID}"/>
+              <Text id="_IDGenText201" text="{mon>businessObject}"/>
+              <Text id="_IDGenText202" text="{mon>refDocumentNo}"/>
+              <Text id="_IDGenText203" text="{mon>messageType}"/>
+              <Text id="_IDGenText204" text="{mon>messageText}"/>
+              <Text id="_IDGenText205" text="{mon>status}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

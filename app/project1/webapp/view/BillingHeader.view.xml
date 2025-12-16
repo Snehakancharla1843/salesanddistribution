@@ -1,0 +1,29 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.BillingHeader">
+  <Page id="_IDGenPage15" title="Billing Header" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable15" growing="true" items="{bill>/BillingHeader}">
+        <columns>
+          <Column id="_IDGenColumn81"><Text id="_IDGenText163" text="ID"/></Column>
+          <Column id="_IDGenColumn82"><Text id="_IDGenText164" text="Billing No"/></Column>
+          <Column id="_IDGenColumn83"><Text id="_IDGenText165" text="Billing Date"/></Column>
+          <Column id="_IDGenColumn84"><Text id="_IDGenText166" text="Posting Date"/></Column>
+          <Column id="_IDGenColumn85"><Text id="_IDGenText167" text="Status"/></Column>
+          <Column id="_IDGenColumn86"><Text id="_IDGenText168" text="Total"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem15">
+            <cells>
+              <Text id="_IDGenText169" text="{bill>ID}"/>
+              <Text id="_IDGenText170" text="{bill>billingNumber}"/>
+              <Text id="_IDGenText171" text="{bill>billingDate}"/>
+              <Text id="_IDGenText172" text="{bill>postingDate}"/>
+              <Text id="_IDGenText173" text="{bill>status}"/>
+              <Text id="_IDGenText174" text="{bill>totalAmount}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

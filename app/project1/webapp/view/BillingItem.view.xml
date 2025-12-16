@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.BillingItem">
+  <Page id="_IDGenPage16" title="Billing Item" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable16" growing="true" items="{bill>/BillingItem}">
+        <columns>
+          <Column id="_IDGenColumn87"><Text id="_IDGenText175" text="ID"/></Column>
+          <Column id="_IDGenColumn88"><Text id="_IDGenText176" text="Qty"/></Column>
+          <Column id="_IDGenColumn89"><Text id="_IDGenText177" text="Net"/></Column>
+          <Column id="_IDGenColumn90"><Text id="_IDGenText178" text="Tax"/></Column>
+          <Column id="_IDGenColumn91"><Text id="_IDGenText179" text="Total"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem16">
+            <cells>
+              <Text id="_IDGenText180" text="{bill>ID}"/>
+              <Text id="_IDGenText181" text="{bill>quantityBilled}"/>
+              <Text id="_IDGenText182" text="{bill>lineNetAmount}"/>
+              <Text id="_IDGenText183" text="{bill>lineTaxAmount}"/>
+              <Text id="_IDGenText184" text="{bill>lineTotalAmount}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

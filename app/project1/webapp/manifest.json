@@ -1,0 +1,318 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "project1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.0",
+      "toolsId": "7b3c3f01-4d7c-477f-8aab-96e1c2e06515"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/master-data/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      },
+      "poService":   { "uri": "/odata/v4/purchase-orders/", "type": "OData", "settings": { "odataVersion": "4.0" } },
+      "inqService":  { "uri": "/odata/v4/sales-inquiry/",   "type": "OData", "settings": { "odataVersion": "4.0" } },
+      "soService":   { "uri": "/odata/v4/sales-orders/",    "type": "OData", "settings": { "odataVersion": "4.0" } },
+      "logService":  { "uri": "/odata/v4/logistics/",       "type": "OData", "settings": { "odataVersion": "4.0" } },
+      "billService": { "uri": "/odata/v4/billing/",         "type": "OData", "settings": { "odataVersion": "4.0" } },
+      "payService":  { "uri": "/odata/v4/payments/",        "type": "OData", "settings": { "odataVersion": "4.0" } },
+      "monService":  { "uri": "/odata/v4/monitoring/",      "type": "OData", "settings": { "odataVersion": "4.0" } }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.143.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "project1.i18n.i18n"
+        }
+      },
+      "md": {
+    "dataSource": "mainService",
+    "settings": {
+      "odataVersion": "4.0",
+      "operationMode": "Server",
+      "autoExpandSelect": true
+    }
+  },
+
+  "po": {
+    "dataSource": "poService",
+    "settings": {
+      "odataVersion": "4.0",
+      "operationMode": "Server",
+      "autoExpandSelect": true
+    }
+  },
+
+  "si": {
+    "dataSource": "inqService",
+    "settings": {
+      "odataVersion": "4.0",
+      "operationMode": "Server",
+      "autoExpandSelect": true
+    }
+  },
+
+  "so": {
+    "dataSource": "soService",
+    "settings": {
+      "odataVersion": "4.0",
+      "operationMode": "Server",
+      "autoExpandSelect": true
+    }
+  },
+
+  "log": {
+    "dataSource": "logService",
+    "settings": {
+      "odataVersion": "4.0",
+      "operationMode": "Server",
+      "autoExpandSelect": true
+    }
+  },
+
+  "bill": {
+    "dataSource": "billService",
+    "settings": {
+      "odataVersion": "4.0",
+      "operationMode": "Server",
+      "autoExpandSelect": true
+    }
+  },
+
+  "pay": {
+    "dataSource": "payService",
+    "settings": {
+      "odataVersion": "4.0",
+      "operationMode": "Server",
+      "autoExpandSelect": true
+    }
+  },
+
+  "mon": {
+    "dataSource": "monService",
+    "settings": {
+      "odataVersion": "4.0",
+      "operationMode": "Server",
+      "autoExpandSelect": true
+    }
+  },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+  "config": {
+    "routerClass": "sap.m.routing.Router",
+    "viewType": "XML",
+    "async": true,
+    "controlId": "app",
+    "controlAggregation": "pages"
+  },
+
+  "routes": [
+    { "pattern": "", "name": "home", "target": "home" },
+
+    { "pattern": "CustomerMaster", "name": "CustomerMaster", "target": "CustomerMaster" },
+    { "pattern": "VendorMaster", "name": "VendorMaster", "target": "VendorMaster" },
+    { "pattern": "Material", "name": "Material", "target": "Material" },
+
+    { "pattern": "PurchaseOrderHeader", "name": "PurchaseOrderHeader", "target": "PurchaseOrderHeader" },
+    { "pattern": "PurchaseOrderItem", "name": "PurchaseOrderItem", "target": "PurchaseOrderItem" },
+
+    { "pattern": "SalesInquiryHeader", "name": "SalesInquiryHeader", "target": "SalesInquiryHeader" },
+    { "pattern": "SalesInquiryItem", "name": "SalesInquiryItem", "target": "SalesInquiryItem" },
+
+    { "pattern": "SalesOrderHeader", "name": "SalesOrderHeader", "target": "SalesOrderHeader" },
+    { "pattern": "SalesOrderItem", "name": "SalesOrderItem", "target": "SalesOrderItem" },
+    { "pattern": "AvailabilityCheck", "name": "AvailabilityCheck", "target": "AvailabilityCheck" },
+
+    { "pattern": "OutboundDeliveryHeader", "name": "OutboundDeliveryHeader", "target": "OutboundDeliveryHeader" },
+    { "pattern": "OutboundDeliveryItem", "name": "OutboundDeliveryItem", "target": "OutboundDeliveryItem" },
+    { "pattern": "TransportationDoc", "name": "TransportationDoc", "target": "TransportationDoc" },
+    { "pattern": "GoodsPickup", "name": "GoodsPickup", "target": "GoodsPickup" },
+    { "pattern": "GoodsIssue", "name": "GoodsIssue", "target": "GoodsIssue" },
+
+    { "pattern": "BillingHeader", "name": "BillingHeader", "target": "BillingHeader" },
+    { "pattern": "BillingItem", "name": "BillingItem", "target": "BillingItem" },
+
+    { "pattern": "PaymentDocument", "name": "PaymentDocument", "target": "PaymentDocument" },
+
+    { "pattern": "SDAuditLog", "name": "SDAuditLog", "target": "SDAuditLog" }
+  ],
+
+  "targets": {
+    "home": {
+      "viewName": "project1.view.View1",
+      "viewId": "View1",
+      "viewType": "XML"
+    },
+
+    "CustomerMaster": {
+      "viewName": "project1.view.CustomerMaster",
+      "viewId": "CustomerMaster",
+      "viewType": "XML"
+    },
+    "VendorMaster": {
+      "viewName": "project1.view.VendorMaster",
+      "viewId": "VendorMaster",
+      "viewType": "XML"
+    },
+    "Material": {
+      "viewName": "project1.view.Material",
+      "viewId": "Material",
+      "viewType": "XML"
+    },
+
+    "PurchaseOrderHeader": {
+      "viewName": "project1.view.PurchaseOrderHeader",
+      "viewId": "PurchaseOrderHeader",
+      "viewType": "XML"
+    },
+    "PurchaseOrderItem": {
+      "viewName": "project1.view.PurchaseOrderItem",
+      "viewId": "PurchaseOrderItem",
+      "viewType": "XML"
+    },
+
+    "SalesInquiryHeader": {
+      "viewName": "project1.view.SalesInquiryHeader",
+      "viewId": "SalesInquiryHeader",
+      "viewType": "XML"
+    },
+    "SalesInquiryItem": {
+      "viewName": "project1.view.SalesInquiryItem",
+      "viewId": "SalesInquiryItem",
+      "viewType": "XML"
+    },
+
+    "SalesOrderHeader": {
+      "viewName": "project1.view.SalesOrderHeader",
+      "viewId": "SalesOrderHeader",
+      "viewType": "XML"
+    },
+    "SalesOrderItem": {
+      "viewName": "project1.view.SalesOrderItem",
+      "viewId": "SalesOrderItem",
+      "viewType": "XML"
+    },
+    "AvailabilityCheck": {
+      "viewName": "project1.view.AvailabilityCheck",
+      "viewId": "AvailabilityCheck",
+      "viewType": "XML"
+    },
+
+    "OutboundDeliveryHeader": {
+      "viewName": "project1.view.OutboundDeliveryHeader",
+      "viewId": "OutboundDeliveryHeader",
+      "viewType": "XML"
+    },
+    "OutboundDeliveryItem": {
+      "viewName": "project1.view.OutboundDeliveryItem",
+      "viewId": "OutboundDeliveryItem",
+      "viewType": "XML"
+    },
+    "TransportationDoc": {
+      "viewName": "project1.view.TransportationDoc",
+      "viewId": "TransportationDoc",
+      "viewType": "XML"
+    },
+    "GoodsPickup": {
+      "viewName": "project1.view.GoodsPickup",
+      "viewId": "GoodsPickup",
+      "viewType": "XML"
+    },
+    "GoodsIssue": {
+      "viewName": "project1.view.GoodsIssue",
+      "viewId": "GoodsIssue",
+      "viewType": "XML"
+    },
+
+    "BillingHeader": {
+      "viewName": "project1.view.BillingHeader",
+      "viewId": "BillingHeader",
+      "viewType": "XML"
+    },
+    "BillingItem": {
+      "viewName": "project1.view.BillingItem",
+      "viewId": "BillingItem",
+      "viewType": "XML"
+    },
+
+    "PaymentDocument": {
+      "viewName": "project1.view.PaymentDocument",
+      "viewId": "PaymentDocument",
+      "viewType": "XML"
+    },
+
+    "SDAuditLog": {
+      "viewName": "project1.view.SDAuditLog",
+      "viewId": "SDAuditLog",
+      "viewType": "XML"
+    }
+  }
+},
+    "rootView": {
+      "viewName": "project1.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

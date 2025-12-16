@@ -1,0 +1,29 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.SalesOrderHeader">
+  <Page id="_IDGenPage7" title="Sales Order Header" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable7" growing="true" items="{so>/SalesOrderHeader}">
+        <columns>
+          <Column id="_IDGenColumn37"><Text id="_IDGenText75" text="ID"/></Column>
+          <Column id="_IDGenColumn38"><Text id="_IDGenText76" text="SO No"/></Column>
+          <Column id="_IDGenColumn39"><Text id="_IDGenText77" text="Doc Date"/></Column>
+          <Column id="_IDGenColumn40"><Text id="_IDGenText78" text="Req Delivery"/></Column>
+          <Column id="_IDGenColumn41"><Text id="_IDGenText79" text="Status"/></Column>
+          <Column id="_IDGenColumn42"><Text id="_IDGenText80" text="Gross"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem7">
+            <cells>
+              <Text id="_IDGenText81" text="{so>ID}"/>
+              <Text id="_IDGenText82" text="{so>salesOrderNumber}"/>
+              <Text id="_IDGenText83" text="{so>documentDate}"/>
+              <Text id="_IDGenText84" text="{so>requestedDelivery}"/>
+              <Text id="_IDGenText85" text="{so>status}"/>
+              <Text id="_IDGenText86" text="{so>grossValue}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

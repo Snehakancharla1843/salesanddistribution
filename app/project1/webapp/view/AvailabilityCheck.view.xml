@@ -1,0 +1,29 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.AvailabilityCheck">
+  <Page id="_IDGenPage9" title="Availability Check" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable9" growing="true" items="{so>/AvailabilityCheck}">
+        <columns>
+          <Column id="_IDGenColumn49"><Text id="_IDGenText99" text="ID"/></Column>
+          <Column id="_IDGenColumn50"><Text id="_IDGenText100" text="Check Time"/></Column>
+          <Column id="_IDGenColumn51"><Text id="_IDGenText101" text="Plant"/></Column>
+          <Column id="_IDGenColumn52"><Text id="_IDGenText102" text="Available"/></Column>
+          <Column id="_IDGenColumn53"><Text id="_IDGenText103" text="Requested"/></Column>
+          <Column id="_IDGenColumn54"><Text id="_IDGenText104" text="Confirmed"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem9">
+            <cells>
+              <Text id="_IDGenText105" text="{so>ID}"/>
+              <Text id="_IDGenText106" text="{so>checkDateTime}"/>
+              <Text id="_IDGenText107" text="{so>plant}"/>
+              <Text id="_IDGenText108" text="{so>availableQuantity}"/>
+              <Text id="_IDGenText109" text="{so>requestedQuantity}"/>
+              <Text id="_IDGenText110" text="{so>confirmedQuantity}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

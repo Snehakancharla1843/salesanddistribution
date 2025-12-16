@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.OutboundDeliveryItem">
+  <Page id="_IDGenPage11" title="Outbound Delivery Item" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable11" growing="true" items="{log>/OutboundDeliveryItem}">
+        <columns>
+          <Column id="_IDGenColumn60"><Text id="_IDGenText121" text="ID"/></Column>
+          <Column id="_IDGenColumn61"><Text id="_IDGenText122" text="Line"/></Column>
+          <Column id="_IDGenColumn62"><Text id="_IDGenText123" text="Qty"/></Column>
+          <Column id="_IDGenColumn63"><Text id="_IDGenText124" text="Batch"/></Column>
+          <Column id="_IDGenColumn64"><Text id="_IDGenText125" text="Remarks"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem11">
+            <cells>
+              <Text id="_IDGenText126" text="{log>ID}"/>
+              <Text id="_IDGenText127" text="{log>lineItemNo}"/>
+              <Text id="_IDGenText128" text="{log>deliveryQuantity}"/>
+              <Text id="_IDGenText129" text="{log>batchNumber}"/>
+              <Text id="_IDGenText130" text="{log>remarks}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

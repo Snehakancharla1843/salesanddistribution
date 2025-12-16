@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.PaymentDocument">
+  <Page id="_IDGenPage17" title="Payment Document" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable17" growing="true" items="{pay>/PaymentDocument}">
+        <columns>
+          <Column id="_IDGenColumn92"><Text id="_IDGenText185" text="ID"/></Column>
+          <Column id="_IDGenColumn93"><Text id="_IDGenText186" text="Pay No"/></Column>
+          <Column id="_IDGenColumn94"><Text id="_IDGenText187" text="Pay Date"/></Column>
+          <Column id="_IDGenColumn95"><Text id="_IDGenText188" text="Amount"/></Column>
+          <Column id="_IDGenColumn96"><Text id="_IDGenText189" text="Status"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem17">
+            <cells>
+              <Text id="_IDGenText190" text="{pay>ID}"/>
+              <Text id="_IDGenText191" text="{pay>paymentNumber}"/>
+              <Text id="_IDGenText192" text="{pay>paymentDate}"/>
+              <Text id="_IDGenText193" text="{pay>paymentAmount}"/>
+              <Text id="_IDGenText194" text="{pay>status}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

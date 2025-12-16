@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.GoodsPickup">
+  <Page id="_IDGenPage13" title="Goods Pickup" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable13" growing="true" items="{log>/GoodsPickup}">
+        <columns>
+          <Column id="_IDGenColumn71"><Text id="_IDGenText143" text="ID"/></Column>
+          <Column id="_IDGenColumn72"><Text id="_IDGenText144" text="Pickup Time"/></Column>
+          <Column id="_IDGenColumn73"><Text id="_IDGenText145" text="Location"/></Column>
+          <Column id="_IDGenColumn74"><Text id="_IDGenText146" text="Handled By"/></Column>
+          <Column id="_IDGenColumn75"><Text id="_IDGenText147" text="Remarks"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem13">
+            <cells>
+              <Text id="_IDGenText148" text="{log>ID}"/>
+              <Text id="_IDGenText149" text="{log>pickupDateTime}"/>
+              <Text id="_IDGenText150" text="{log>pickupLocation}"/>
+              <Text id="_IDGenText151" text="{log>handledBy}"/>
+              <Text id="_IDGenText152" text="{log>remarks}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

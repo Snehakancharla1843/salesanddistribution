@@ -1,0 +1,29 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.PurchaseOrderItem">
+  <Page id="_IDGenPage4" title="Purchase Order Item" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable4" growing="true" items="{po>/PurchaseOrderItem}">
+        <columns>
+          <Column id="_IDGenColumn21"><Text id="_IDGenText43" text="ID"/></Column>
+          <Column id="_IDGenColumn22"><Text id="_IDGenText44" text="Line"/></Column>
+          <Column id="_IDGenColumn23"><Text id="_IDGenText45" text="Net Price"/></Column>
+          <Column id="_IDGenColumn24"><Text id="_IDGenText46" text="Net Amt"/></Column>
+          <Column id="_IDGenColumn25"><Text id="_IDGenText47" text="Tax"/></Column>
+          <Column id="_IDGenColumn26"><Text id="_IDGenText48" text="Gross"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem4">
+            <cells>
+              <Text id="_IDGenText49" text="{po>ID}"/>
+              <Text id="_IDGenText50" text="{po>lineItemNo}"/>
+              <Text id="_IDGenText51" text="{po>netPrice}"/>
+              <Text id="_IDGenText52" text="{po>netAmount}"/>
+              <Text id="_IDGenText53" text="{po>taxAmount}"/>
+              <Text id="_IDGenText54" text="{po>grossAmount}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

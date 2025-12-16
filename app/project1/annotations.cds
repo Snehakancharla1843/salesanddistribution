@@ -1,0 +1,1 @@
+using MasterDataService as service from '../../srv/service';

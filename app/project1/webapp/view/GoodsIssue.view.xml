@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.GoodsIssue">
+  <Page id="_IDGenPage14" title="Goods Issue" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable14" growing="true" items="{log>/GoodsIssue}">
+        <columns>
+          <Column id="_IDGenColumn76"><Text id="_IDGenText153" text="ID"/></Column>
+          <Column id="_IDGenColumn77"><Text id="_IDGenText154" text="GI No"/></Column>
+          <Column id="_IDGenColumn78"><Text id="_IDGenText155" text="GI Time"/></Column>
+          <Column id="_IDGenColumn79"><Text id="_IDGenText156" text="Posted By"/></Column>
+          <Column id="_IDGenColumn80"><Text id="_IDGenText157" text="Status"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem14">
+            <cells>
+              <Text id="_IDGenText158" text="{log>ID}"/>
+              <Text id="_IDGenText159" text="{log>giNumber}"/>
+              <Text id="_IDGenText160" text="{log>giDateTime}"/>
+              <Text id="_IDGenText161" text="{log>postedBy}"/>
+              <Text id="_IDGenText162" text="{log>postingStatus}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

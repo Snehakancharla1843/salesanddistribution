@@ -1,0 +1,397 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Page
+    id="dashboardPage"
+    title="Business Dashboard">
+
+    <content>
+
+      <l:Grid
+        id="dashboardGrid"
+        width="100%"
+        defaultSpan="L4 M6 S12"
+        hSpacing="1"
+        vSpacing="1">
+
+        <!-- ===================== -->
+        <!-- MASTER DATA -->
+        <!-- ===================== -->
+
+        <GenericTile
+          id="tileCustomerMaster"
+          class="tileLayout"
+          header="Customer Master"
+          subheader="Master Data"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData1" key="entity" value="CustomerMaster"/>
+          </customData>
+
+          <TileContent id="tileCustomerMasterContent">
+            <ImageContent
+              id="tileCustomerMasterIcon"
+              src="sap-icon://customer"/>
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileVendorMaster"
+          class="tileLayout"
+          header="Vendor Master"
+          subheader="Master Data"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData2" key="entity" value="VendorMaster"/>
+          </customData>
+
+          <TileContent id="tileVendorMasterContent">
+            <ImageContent
+              id="tileVendorMasterIcon"
+              src="sap-icon://supplier"/>
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileMaterial"
+          class="tileLayout"
+          header="Material Master"
+          subheader="Master Data"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData3" key="entity" value="Material"/>
+          </customData>
+
+          <TileContent id="tileMaterialContent">
+            <ImageContent
+              id="tileMaterialIcon"
+              src="sap-icon://product"/>
+          </TileContent>
+        </GenericTile>
+
+        <!-- ===================== -->
+        <!-- PURCHASE ORDER -->
+        <!-- ===================== -->
+
+        <GenericTile
+          id="tilePOHeader"
+          class="tileLayout"
+          header="Purchase Order Header"
+          subheader="Purchase Orders"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData4" key="entity" value="PurchaseOrderHeader"/>
+          </customData>
+
+          <TileContent id="tilePOHeaderContent">
+            <ImageContent
+              id="tilePOHeaderIcon"
+              src="sap-icon://cart"/>   <!-- ✅ CHANGED -->
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tilePOItem"
+          class="tileLayout"
+          header="Purchase Order Item"
+          subheader="Purchase Orders"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData5" key="entity" value="PurchaseOrderItem"/>
+          </customData>
+
+          <TileContent id="tilePOItemContent">
+            <ImageContent
+              id="tilePOItemIcon"
+              src="sap-icon://document"/>
+          </TileContent>
+        </GenericTile>
+
+        <!-- ===================== -->
+        <!-- SALES INQUIRY -->
+        <!-- ===================== -->
+
+        <GenericTile
+          id="tileSalesInquiryHeader"
+          class="tileLayout"
+          header="Sales Inquiry Header"
+          subheader="Sales Inquiry"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData6" key="entity" value="SalesInquiryHeader"/>
+          </customData>
+
+          <TileContent id="tileSIHeaderContent">
+            <ImageContent
+              id="tileSIHeaderIcon"
+              src="sap-icon://lead"/>
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileSalesInquiryItem"
+          class="tileLayout"
+          header="Sales Inquiry Item"
+          subheader="Sales Inquiry"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData7" key="entity" value="SalesInquiryItem"/>
+          </customData>
+
+          <TileContent id="tileSIItemContent">
+            <ImageContent
+              id="tileSIItemIcon"
+              src="sap-icon://detail-view"/>
+          </TileContent>
+        </GenericTile>
+
+        <!-- ===================== -->
+        <!-- SALES ORDER -->
+        <!-- ===================== -->
+
+        <GenericTile
+          id="tileSalesOrderHeader"
+          class="tileLayout"
+          header="Sales Order Header"
+          subheader="Sales Orders"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData8" key="entity" value="SalesOrderHeader"/>
+          </customData>
+
+          <TileContent id="tileSOHeaderContent">
+            <ImageContent
+              id="tileSOHeaderIcon"
+              src="sap-icon://sales-order"/>
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileSalesOrderItem"
+          class="tileLayout"
+          header="Sales Order Item"
+          subheader="Sales Orders"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData9" key="entity" value="SalesOrderItem"/>
+          </customData>
+
+          <TileContent id="tileSOItemContent">
+            <ImageContent
+              id="tileSOItemIcon"
+              src="sap-icon://sales-notification"/>
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileAvailabilityCheck"
+          class="tileLayout"
+          header="Availability Check"
+          subheader="Sales Orders"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData10" key="entity" value="AvailabilityCheck"/>
+          </customData>
+
+          <TileContent id="tileAvailContent">
+            <ImageContent
+              id="tileAvailIcon"
+              src="sap-icon://inventory"/>
+          </TileContent>
+        </GenericTile>
+
+        <!-- ===================== -->
+        <!-- LOGISTICS -->
+        <!-- ===================== -->
+
+        <GenericTile
+          id="tileOutboundDeliveryHeader"
+          class="tileLayout"
+          header="Outbound Delivery Header"
+          subheader="Logistics"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData11" key="entity" value="OutboundDeliveryHeader"/>
+          </customData>
+
+          <TileContent id="tileODHeaderContent">
+            <ImageContent
+              id="tileODHeaderIcon"
+              src="sap-icon://shipping-status"/>
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileOutboundDeliveryItem"
+          class="tileLayout"
+          header="Outbound Delivery Item"
+          subheader="Logistics"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData12" key="entity" value="OutboundDeliveryItem"/>
+          </customData>
+
+          <TileContent id="tileODItemContent">
+            <ImageContent
+              id="tileODItemIcon"
+              src="sap-icon://shipping-status"/>
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileTransportationDoc"
+          class="tileLayout"
+          header="Transportation Document"
+          subheader="Logistics"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData13" key="entity" value="TransportationDoc"/>
+          </customData>
+
+          <TileContent id="tileTransportContent">
+            <ImageContent
+              id="tileTransportIcon"
+              src="sap-icon://cargo-train"/>
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileGoodsPickup"
+          class="tileLayout"
+          header="Goods Pickup"
+          subheader="Logistics"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData14" key="entity" value="GoodsPickup"/>
+          </customData>
+
+          <TileContent id="tilePickupContent">
+            <ImageContent
+              id="tilePickupIcon"
+              src="sap-icon://shipping-status"/>  <!-- ✅ CHANGED -->
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileGoodsIssue"
+          class="tileLayout"
+          header="Goods Issue"
+          subheader="Logistics"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData15" key="entity" value="GoodsIssue"/>
+          </customData>
+
+          <TileContent id="tileIssueContent">
+            <ImageContent
+              id="tileIssueIcon"
+              src="sap-icon://shipping-status"/>
+          </TileContent>
+        </GenericTile>
+
+        <!-- ===================== -->
+        <!-- BILLING -->
+        <!-- ===================== -->
+
+        <GenericTile
+          id="tileBillingHeader"
+          class="tileLayout"
+          header="Billing Header"
+          subheader="Billing"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData16" key="entity" value="BillingHeader"/>
+          </customData>
+
+          <TileContent id="tileBillingHeaderContent">
+            <ImageContent
+              id="tileBillingHeaderIcon"
+              src="sap-icon://receipt"/>  <!-- ✅ CHANGED -->
+          </TileContent>
+        </GenericTile>
+
+        <GenericTile
+          id="tileBillingItem"
+          class="tileLayout"
+          header="Billing Item"
+          subheader="Billing"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData17" key="entity" value="BillingItem"/>
+          </customData>
+
+          <TileContent id="tileBillingItemContent">
+            <ImageContent
+              id="tileBillingItemIcon"
+              src="sap-icon://expense-report"/>
+          </TileContent>
+        </GenericTile>
+
+        <!-- ===================== -->
+        <!-- PAYMENT -->
+        <!-- ===================== -->
+
+        <GenericTile
+          id="tilePaymentDocument"
+          class="tileLayout"
+          header="Payment Document"
+          subheader="Payments"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData18" key="entity" value="PaymentDocument"/>
+          </customData>
+
+          <TileContent id="tilePaymentContent">
+            <ImageContent
+              id="tilePaymentIcon"
+              src="sap-icon://money-bills"/>
+          </TileContent>
+        </GenericTile>
+
+        <!-- ===================== -->
+        <!-- MONITORING -->
+        <!-- ===================== -->
+
+        <GenericTile
+          id="tileAuditLog"
+          class="tileLayout"
+          header="Audit Log"
+          subheader="Monitoring"
+          press=".onTilePress">
+
+          <customData>
+            <core:CustomData id="_IDGenCustomData19" key="entity" value="SDAuditLog"/>
+          </customData>
+
+          <TileContent id="tileAuditContent">
+            <ImageContent
+              id="tileAuditIcon"
+              src="sap-icon://inspect"/>
+          </TileContent>
+        </GenericTile>
+
+      </l:Grid>
+
+    </content>
+  </Page>
+</mvc:View>

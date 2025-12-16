@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+  controllerName="project1.controller.SalesInquiryHeader">
+  <Page id="_IDGenPage5" title="Sales Inquiry Header" showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+      <Table id="_IDGenTable5" growing="true" items="{si>/SalesInquiryHeader}">
+        <columns>
+          <Column id="_IDGenColumn27"><Text id="_IDGenText55" text="ID"/></Column>
+          <Column id="_IDGenColumn28"><Text id="_IDGenText56" text="Inquiry No"/></Column>
+          <Column id="_IDGenColumn29"><Text id="_IDGenText57" text="Inquiry Date"/></Column>
+          <Column id="_IDGenColumn30"><Text id="_IDGenText58" text="Valid To"/></Column>
+          <Column id="_IDGenColumn31"><Text id="_IDGenText59" text="Status"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem5">
+            <cells>
+              <Text id="_IDGenText60" text="{si>ID}"/>
+              <Text id="_IDGenText61" text="{si>inquiryNumber}"/>
+              <Text id="_IDGenText62" text="{si>inquiryDate}"/>
+              <Text id="_IDGenText63" text="{si>validTo}"/>
+              <Text id="_IDGenText64" text="{si>status}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>
