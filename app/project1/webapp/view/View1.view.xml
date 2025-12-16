@@ -95,7 +95,7 @@
               src="sap-icon://cart"/>   <!-- ✅ CHANGED -->
           </TileContent>
         </GenericTile>
-
+<!-- 
         <GenericTile
           id="tilePOItem"
           class="tileLayout"
@@ -112,7 +112,7 @@
               id="tilePOItemIcon"
               src="sap-icon://document"/>
           </TileContent>
-        </GenericTile>
+        </GenericTile> -->
 
         <!-- ===================== -->
         <!-- SALES INQUIRY -->

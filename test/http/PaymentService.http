@@ -1,0 +1,79 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### PaymentDocument
+# @name PaymentDocument_GET
+GET {{server}}/odata/v4/payments/PaymentDocument
+Authorization: Basic {{username}}:{{password}}
+
+
+### PaymentDocument Drafts GET
+# @name PaymentDocument_Drafts_GET
+GET {{server}}/odata/v4/payments/PaymentDocument?$filter=(IsActiveEntity eq false)
+Authorization: Basic {{username}}:{{password}}
+
+
+### PaymentDocument Draft POST
+# @name PaymentDocument_Draft_POST
+POST {{server}}/odata/v4/payments/PaymentDocument
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "paymentNumber": "aymentNumber-1967509",
+  "paymentDate": "2020-07-17",
+  "paymentMethod": "paymentMethod-1967509",
+  "paymentAmount": 1531959.18,
+  "currency": "509",
+  "status": "rejected",
+  "referenceText": "referenceText-1967509",
+  "createdAt": "2003-07-06T00:00:00.000Z",
+  "createdBy": "createdBy.16651@example.com",
+  "modifiedAt": "2007-06-09T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.16651@example.net"
+}
+
+
+### Result from POST request above
+@draftID={{PaymentDocument_Draft_POST.response.body.$.ID}}
+
+
+### PaymentDocument Draft PATCH
+# @name PaymentDocument_Draft_Patch
+PATCH {{server}}/odata/v4/payments/PaymentDocument(ID={{draftID}},IsActiveEntity=false)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "paymentNumber": "aymentNumber-1967509",
+  "paymentDate": "2020-07-17",
+  "paymentMethod": "paymentMethod-1967509",
+  "paymentAmount": 1531959.18,
+  "currency": "509",
+  "status": "rejected",
+  "referenceText": "referenceText-1967509",
+  "createdAt": "2003-07-06T00:00:00.000Z",
+  "createdBy": "createdBy.16651@example.com",
+  "modifiedAt": "2007-06-09T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.16651@example.net"
+}
+
+
+### PaymentDocument Draft Prepare
+# @name PaymentDocument_Draft_Prepare
+POST {{server}}/odata/v4/payments/PaymentDocument(ID={{draftID}},IsActiveEntity=false)/PaymentService.draftPrepare
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### PaymentDocument Draft Activate
+# @name PaymentDocument_Draft_Activate
+POST {{server}}/odata/v4/payments/PaymentDocument(ID={{draftID}},IsActiveEntity=false)/PaymentService.draftActivate
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}

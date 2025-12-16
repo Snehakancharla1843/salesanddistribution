@@ -1,0 +1,264 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### BillingHeader
+# @name BillingHeader_GET
+GET {{server}}/odata/v4/billing/BillingHeader
+Authorization: Basic {{username}}:{{password}}
+
+
+### BillingHeader Drafts GET
+# @name BillingHeader_Drafts_GET
+GET {{server}}/odata/v4/billing/BillingHeader?$filter=(IsActiveEntity eq false)
+Authorization: Basic {{username}}:{{password}}
+
+
+### BillingHeader Draft POST
+# @name BillingHeader_Draft_POST
+POST {{server}}/odata/v4/billing/BillingHeader
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "billingNumber": "llingNumber-31627229",
+  "billingDate": "2008-06-25",
+  "postingDate": "2022-10-08",
+  "currency": "229",
+  "netAmount": 7168885.22,
+  "taxAmount": 27270354.15,
+  "totalAmount": 26790928.31,
+  "status": "verified",
+  "toItems": [
+    {
+      "ID": "7453837a-4238-4d3b-a4d8-1941aa9dfb1c",
+      "quantityBilled": 1305350.53,
+      "uom": "om-7453837",
+      "netPrice": 6178951.41,
+      "discountPercent": 717.3,
+      "gstPercent": 653.2,
+      "lineNetAmount": 26531029.2,
+      "lineTaxAmount": 22474503.16,
+      "lineTotalAmount": 31435608.84,
+      "createdAt": "2001-10-29T00:00:00.000Z",
+      "createdBy": "createdBy.4frf1@example.com",
+      "modifiedAt": "2019-03-20T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.4frf1@example.org"
+    },
+    {
+      "ID": "74538389-0bfa-40cc-a967-f21828eb1b48",
+      "quantityBilled": 11996041.71,
+      "uom": "om-7453838",
+      "netPrice": 7406227.29,
+      "discountPercent": 272.11,
+      "gstPercent": 988.26,
+      "lineNetAmount": 19931614.29,
+      "lineTaxAmount": 23745471.18,
+      "lineTotalAmount": 25448861.85,
+      "createdAt": "2010-09-17T00:00:00.000Z",
+      "createdBy": "createdBy.4frf2@example.net",
+      "modifiedAt": "2007-07-16T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.4frf2@example.org"
+    }
+  ],
+  "toPayments": [
+    {
+      "ID": "16664383-429c-489c-9f14-d14faa10fb1a",
+      "paymentNumber": "ymentNumber-16664383",
+      "paymentDate": "2002-02-03",
+      "paymentMethod": "paymentMethod-16664383",
+      "paymentAmount": 1226743.73,
+      "currency": "383",
+      "status": "rejected",
+      "referenceText": "referenceText-16664383",
+      "createdAt": "2007-05-18T00:00:00.000Z",
+      "createdBy": "createdBy.9x6bj@example.com",
+      "modifiedAt": "2006-04-27T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.9x6bj@example.com"
+    },
+    {
+      "ID": "16664384-c9b5-45af-a106-267f6d0ad6ac",
+      "paymentNumber": "ymentNumber-16664384",
+      "paymentDate": "2022-09-27",
+      "paymentMethod": "paymentMethod-16664384",
+      "paymentAmount": 28581726.66,
+      "currency": "384",
+      "status": "paid",
+      "referenceText": "referenceText-16664384",
+      "createdAt": "2001-05-07T00:00:00.000Z",
+      "createdBy": "createdBy.9x6bk@example.net",
+      "modifiedAt": "2014-10-18T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.9x6bk@example.org"
+    }
+  ],
+  "createdAt": "2004-04-08T00:00:00.000Z",
+  "createdBy": "createdBy.itvq5@example.org",
+  "modifiedAt": "2013-10-18T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.itvq5@example.com"
+}
+
+
+### Result from POST request above
+@draftID={{BillingHeader_Draft_POST.response.body.$.ID}}
+
+
+### BillingHeader Draft PATCH
+# @name BillingHeader_Draft_Patch
+PATCH {{server}}/odata/v4/billing/BillingHeader(ID={{draftID}},IsActiveEntity=false)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "billingNumber": "llingNumber-31627229",
+  "billingDate": "2008-06-25",
+  "postingDate": "2022-10-08",
+  "currency": "229",
+  "netAmount": 7168885.22,
+  "taxAmount": 27270354.15,
+  "totalAmount": 26790928.31,
+  "status": "verified",
+  "toItems": [
+    {
+      "ID": "7453837a-4238-4d3b-a4d8-1941aa9dfb1c",
+      "quantityBilled": 1305350.53,
+      "uom": "om-7453837",
+      "netPrice": 6178951.41,
+      "discountPercent": 717.3,
+      "gstPercent": 653.2,
+      "lineNetAmount": 26531029.2,
+      "lineTaxAmount": 22474503.16,
+      "lineTotalAmount": 31435608.84,
+      "createdAt": "2001-10-29T00:00:00.000Z",
+      "createdBy": "createdBy.4frf1@example.com",
+      "modifiedAt": "2019-03-20T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.4frf1@example.org"
+    },
+    {
+      "ID": "74538389-0bfa-40cc-a967-f21828eb1b48",
+      "quantityBilled": 11996041.71,
+      "uom": "om-7453838",
+      "netPrice": 7406227.29,
+      "discountPercent": 272.11,
+      "gstPercent": 988.26,
+      "lineNetAmount": 19931614.29,
+      "lineTaxAmount": 23745471.18,
+      "lineTotalAmount": 25448861.85,
+      "createdAt": "2010-09-17T00:00:00.000Z",
+      "createdBy": "createdBy.4frf2@example.net",
+      "modifiedAt": "2007-07-16T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.4frf2@example.org"
+    }
+  ],
+  "toPayments": [
+    {
+      "ID": "16664383-429c-489c-9f14-d14faa10fb1a",
+      "paymentNumber": "ymentNumber-16664383",
+      "paymentDate": "2002-02-03",
+      "paymentMethod": "paymentMethod-16664383",
+      "paymentAmount": 1226743.73,
+      "currency": "383",
+      "status": "rejected",
+      "referenceText": "referenceText-16664383",
+      "createdAt": "2007-05-18T00:00:00.000Z",
+      "createdBy": "createdBy.9x6bj@example.com",
+      "modifiedAt": "2006-04-27T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.9x6bj@example.com"
+    },
+    {
+      "ID": "16664384-c9b5-45af-a106-267f6d0ad6ac",
+      "paymentNumber": "ymentNumber-16664384",
+      "paymentDate": "2022-09-27",
+      "paymentMethod": "paymentMethod-16664384",
+      "paymentAmount": 28581726.66,
+      "currency": "384",
+      "status": "paid",
+      "referenceText": "referenceText-16664384",
+      "createdAt": "2001-05-07T00:00:00.000Z",
+      "createdBy": "createdBy.9x6bk@example.net",
+      "modifiedAt": "2014-10-18T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.9x6bk@example.org"
+    }
+  ],
+  "createdAt": "2004-04-08T00:00:00.000Z",
+  "createdBy": "createdBy.itvq5@example.org",
+  "modifiedAt": "2013-10-18T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.itvq5@example.com"
+}
+
+
+### BillingHeader Draft Prepare
+# @name BillingHeader_Draft_Prepare
+POST {{server}}/odata/v4/billing/BillingHeader(ID={{draftID}},IsActiveEntity=false)/BillingService.draftPrepare
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### BillingHeader Draft Activate
+# @name BillingHeader_Draft_Activate
+POST {{server}}/odata/v4/billing/BillingHeader(ID={{draftID}},IsActiveEntity=false)/BillingService.draftActivate
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### BillingItem
+# @name BillingItem_GET
+GET {{server}}/odata/v4/billing/BillingItem
+Authorization: Basic {{username}}:{{password}}
+
+
+### BillingItem
+# @name BillingItem_POST
+POST {{server}}/odata/v4/billing/BillingItem
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "7453837a-4238-4d3b-a4d8-1941aa9dfb1c",
+  "quantityBilled": 1305350.53,
+  "uom": "om-7453837",
+  "netPrice": 6178951.41,
+  "discountPercent": 717.3,
+  "gstPercent": 653.2,
+  "lineNetAmount": 26531029.2,
+  "lineTaxAmount": 22474503.16,
+  "lineTotalAmount": 31435608.84,
+  "createdAt": "2001-10-29T00:00:00.000Z",
+  "createdBy": "createdBy.4frf1@example.com",
+  "modifiedAt": "2019-03-20T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.4frf1@example.org"
+}
+
+
+### BillingItem
+# @name BillingItem_PATCH
+PATCH {{server}}/odata/v4/billing/BillingItem/7453837a-4238-4d3b-a4d8-1941aa9dfb1c
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "7453837a-4238-4d3b-a4d8-1941aa9dfb1c",
+  "quantityBilled": 1305350.53,
+  "uom": "om-7453837",
+  "netPrice": 6178951.41,
+  "discountPercent": 717.3,
+  "gstPercent": 653.2,
+  "lineNetAmount": 26531029.2,
+  "lineTaxAmount": 22474503.16,
+  "lineTotalAmount": 31435608.84,
+  "createdAt": "2001-10-29T00:00:00.000Z",
+  "createdBy": "createdBy.4frf1@example.com",
+  "modifiedAt": "2019-03-20T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.4frf1@example.org"
+}
+
+
+### BillingItem
+# @name BillingItem_DELETE
+DELETE {{server}}/odata/v4/billing/BillingItem/7453837a-4238-4d3b-a4d8-1941aa9dfb1c
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

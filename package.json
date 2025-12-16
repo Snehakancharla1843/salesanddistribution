@@ -8,12 +8,14 @@
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
-    "cds-plugin-ui5": "^0.13.0"
+    "cds-plugin-ui5": "^0.13.0",
+    "@cap-js/cds-test": "^0"
   },
   "scripts": {
     "start": "cds-serve",
     "watch-salesorderdistribution": "cds watch --open salesorderdistribution/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-project1": "cds watch --open project1/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "test": "node --test"
   },
   "private": true,
   "workspaces": [

@@ -1,0 +1,2435 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### SalesOrderHeader
+# @name SalesOrderHeader_GET
+GET {{server}}/odata/v4/sales-orders/SalesOrderHeader
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderHeader Drafts GET
+# @name SalesOrderHeader_Drafts_GET
+GET {{server}}/odata/v4/sales-orders/SalesOrderHeader?$filter=(IsActiveEntity eq false)
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderHeader Draft POST
+# @name SalesOrderHeader_Draft_POST
+POST {{server}}/odata/v4/sales-orders/SalesOrderHeader
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "salesOrderNumber": "sOrderNumber-1183385",
+  "salesOrg": "rg-1183385",
+  "distributionChannel": "el-1183385",
+  "documentDate": "2010-04-28",
+  "requestedDelivery": "2003-02-02",
+  "currency": "385",
+  "paymentTerms": "30Days",
+  "netValue": 27207440.26,
+  "taxValue": 31567022.25,
+  "grossValue": 19518184.12,
+  "status": "completed",
+  "remarks": "remarks-1183385",
+  "toItems": [
+    {
+      "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f",
+      "lineItemNo": 1,
+      "quantity": {
+        "order_quan": 14250790.202
+      },
+      "uom": "m-11922270",
+      "netPrice": 8332991.24,
+      "discountPercent": 16.17,
+      "gstPercent": 898.29,
+      "netAmount": 30092112.94,
+      "taxAmount": 17444606.29,
+      "grossAmount": 12016434.15,
+      "confirmedQuantity": 11139364.655,
+      "confirmedDate": "2002-06-26",
+      "deliveredQuantity": 18128708.5,
+      "billedQuantity": 15995856.944,
+      "openQuantity": 6612206.18,
+      "status": "open",
+      "toAvailabilityLogs": [
+        {
+          "ID": "26826573-0929-4195-9c53-883a5f0e5bb6",
+          "checkDateTime": "2020-04-16T00:00:00.000Z",
+          "plant": "t-26826573",
+          "availableQuantity": 26145837.177,
+          "requestedQuantity": 23377155.982,
+          "confirmedQuantity": 29552496.165,
+          "result": "result-26826573",
+          "message": "message-26826573",
+          "createdAt": "2002-02-04T00:00:00.000Z",
+          "createdBy": "createdBy.fyzil@example.org",
+          "modifiedAt": "2009-01-10T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.fyzil@example.net"
+        },
+        {
+          "ID": "26826574-8563-4767-9248-d41074efedde",
+          "checkDateTime": "2002-05-16T00:00:00.000Z",
+          "plant": "t-26826574",
+          "availableQuantity": 19739111.139,
+          "requestedQuantity": 29730872.265,
+          "confirmedQuantity": 2458723.16,
+          "result": "result-26826574",
+          "message": "message-26826574",
+          "createdAt": "2007-07-11T00:00:00.000Z",
+          "createdBy": "createdBy.fyzim@example.org",
+          "modifiedAt": "2014-01-03T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.fyzim@example.org"
+        }
+      ],
+      "toDeliveryItems": [
+        {
+          "ID": "18923074-1e98-4452-91bc-988cd96c4a85",
+          "lineItemNo": 89,
+          "deliveryQuantity": 29656984.243,
+          "uom": "m-18923074",
+          "batchNumber": "batchNumber-18923074",
+          "remarks": "remarks-18923074",
+          "toBillingItems": [
+            {
+              "ID": "15777222-32a3-4797-95b4-ed1bdd891e54",
+              "salesItem": {
+                "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+              },
+              "quantityBilled": 14744735.108,
+              "uom": "m-15777222",
+              "netPrice": 17307673.49,
+              "discountPercent": 299.2,
+              "gstPercent": 331.17,
+              "lineNetAmount": 23568949.97,
+              "lineTaxAmount": 2983265.87,
+              "lineTotalAmount": 5730651.2,
+              "createdAt": "2010-12-01T00:00:00.000Z",
+              "createdBy": "createdBy.9e5s6@example.com",
+              "modifiedAt": "2023-07-19T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.9e5s6@example.com"
+            },
+            {
+              "ID": "15777223-117a-40e4-93cc-b43457d2adb8",
+              "salesItem": {
+                "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+              },
+              "quantityBilled": 26702218.178,
+              "uom": "m-15777223",
+              "netPrice": 20317614.91,
+              "discountPercent": 577.4,
+              "gstPercent": 750.6,
+              "lineNetAmount": 3615735.2,
+              "lineTaxAmount": 1956522.68,
+              "lineTotalAmount": 12057894.19,
+              "createdAt": "2002-06-06T00:00:00.000Z",
+              "createdBy": "createdBy.9e5s7@example.com",
+              "modifiedAt": "2014-08-11T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.9e5s7@example.net"
+            }
+          ],
+          "createdAt": "2019-05-07T00:00:00.000Z",
+          "createdBy": "createdBy.b9l4y@example.org",
+          "modifiedAt": "2011-09-19T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.b9l4y@example.net"
+        },
+        {
+          "ID": "18923075-cc7e-4b28-b032-6bb21d322d9e",
+          "lineItemNo": 72,
+          "deliveryQuantity": 1446824.203,
+          "uom": "m-18923075",
+          "batchNumber": "batchNumber-18923075",
+          "remarks": "remarks-18923075",
+          "toBillingItems": [
+            {
+              "ID": "14094555-4807-4d93-b32b-1b4fc0f23661",
+              "salesItem": {
+                "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+              },
+              "quantityBilled": 15056672.596,
+              "uom": "m-14094555",
+              "netPrice": 8020012.98,
+              "discountPercent": 429.15,
+              "gstPercent": 928.27,
+              "lineNetAmount": 29040965.18,
+              "lineTaxAmount": 9492775.17,
+              "lineTotalAmount": 12235691.29,
+              "createdAt": "2013-11-05T00:00:00.000Z",
+              "createdBy": "createdBy.8e3ff@example.net",
+              "modifiedAt": "2008-04-30T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.8e3ff@example.org"
+            },
+            {
+              "ID": "14094556-cc05-41b6-8516-acfc26c9dccd",
+              "salesItem": {
+                "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+              },
+              "quantityBilled": 22081874.272,
+              "uom": "m-14094556",
+              "netPrice": 29796351.27,
+              "discountPercent": 67.19,
+              "gstPercent": 985.17,
+              "lineNetAmount": 27299950.71,
+              "lineTaxAmount": 7659513.93,
+              "lineTotalAmount": 9517527.27,
+              "createdAt": "2012-01-13T00:00:00.000Z",
+              "createdBy": "createdBy.8e3fg@example.org",
+              "modifiedAt": "2014-12-25T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.8e3fg@example.com"
+            }
+          ],
+          "createdAt": "2016-12-30T00:00:00.000Z",
+          "createdBy": "createdBy.b9l4z@example.net",
+          "modifiedAt": "2001-08-21T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.b9l4z@example.com"
+        }
+      ],
+      "toBillingItems": [
+        {
+          "ID": "3973929e-18fe-45cf-9d75-c8ae62adf472",
+          "quantityBilled": 1447344.431,
+          "uom": "om-3973929",
+          "netPrice": 18584721.19,
+          "discountPercent": 35.42,
+          "gstPercent": 198.12,
+          "lineNetAmount": 12867928.12,
+          "lineTaxAmount": 21043955.16,
+          "lineTotalAmount": 16015102.28,
+          "createdAt": "2007-04-27T00:00:00.000Z",
+          "createdBy": "createdBy.2d6ax@example.org",
+          "modifiedAt": "2012-06-22T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.2d6ax@example.com"
+        },
+        {
+          "ID": "3973930e-c60f-4e0c-99ac-7277ae73dbd9",
+          "quantityBilled": 29528801.216,
+          "uom": "om-3973930",
+          "netPrice": 9573094.8,
+          "discountPercent": 27.31,
+          "gstPercent": 535.26,
+          "lineNetAmount": 23620810.18,
+          "lineTaxAmount": 23723586.29,
+          "lineTotalAmount": 29858466.94,
+          "createdAt": "2008-10-07T00:00:00.000Z",
+          "createdBy": "createdBy.2d6ay@example.com",
+          "modifiedAt": "2011-08-02T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.2d6ay@example.net"
+        }
+      ],
+      "createdAt": "2020-05-28T00:00:00.000Z",
+      "createdBy": "createdBy.73ja6@example.org",
+      "modifiedAt": "2006-04-13T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.73ja6@example.org"
+    },
+    {
+      "ID": "11922271-630b-418e-9b29-a7f9ccca9354",
+      "lineItemNo": 75,
+      "quantity": {
+        "order_quan": 12776880.392
+      },
+      "uom": "m-11922271",
+      "netPrice": 10383295.12,
+      "discountPercent": 444.15,
+      "gstPercent": 696.25,
+      "netAmount": 26661002.91,
+      "taxAmount": 8522184.41,
+      "grossAmount": 7859636.34,
+      "confirmedQuantity": 12326107.133,
+      "confirmedDate": "2007-09-02",
+      "deliveredQuantity": 11300582.172,
+      "billedQuantity": 23307360.267,
+      "openQuantity": 8290940.21,
+      "status": "partiallyDelivered",
+      "toAvailabilityLogs": [
+        {
+          "ID": "12454341-0e1f-4297-96a7-1b3fe8a6a025",
+          "checkDateTime": "2022-04-23T00:00:00.000Z",
+          "plant": "t-12454341",
+          "availableQuantity": 20310231.151,
+          "requestedQuantity": 1435323.146,
+          "confirmedQuantity": 5150469.221,
+          "result": "result-12454341",
+          "message": "message-12454341",
+          "createdAt": "2010-08-30T00:00:00.000Z",
+          "createdBy": "createdBy.7extx@example.org",
+          "modifiedAt": "2017-03-30T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.7extx@example.org"
+        },
+        {
+          "ID": "12454342-7c51-4511-b9e8-47b59f4c6483",
+          "checkDateTime": "2021-09-07T00:00:00.000Z",
+          "plant": "t-12454342",
+          "availableQuantity": 12808692.831,
+          "requestedQuantity": 15823336.151,
+          "confirmedQuantity": 26468914.48,
+          "result": "result-12454342",
+          "message": "message-12454342",
+          "createdAt": "2022-12-04T00:00:00.000Z",
+          "createdBy": "createdBy.7exty@example.com",
+          "modifiedAt": "2009-09-25T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.7exty@example.org"
+        }
+      ],
+      "toDeliveryItems": [
+        {
+          "ID": "6959017c-5b53-4e6b-bcc3-e4d07f43ef58",
+          "lineItemNo": 36,
+          "deliveryQuantity": 848573.988,
+          "uom": "om-6959017",
+          "batchNumber": "batchNumber-6959017",
+          "remarks": "remarks-6959017",
+          "toBillingItems": [
+            {
+              "ID": "23005585-4542-47cf-8aec-63c81938ce55",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 27672484.526,
+              "uom": "om-2300558",
+              "netPrice": 24028589.29,
+              "discountPercent": 676.19,
+              "gstPercent": 787.16,
+              "lineNetAmount": 25086032.63,
+              "lineTaxAmount": 10959558.23,
+              "lineTotalAmount": 17800234.15,
+              "createdAt": "2017-02-09T00:00:00.000Z",
+              "createdBy": "createdBy.1db4e@example.net",
+              "modifiedAt": "2016-02-12T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.1db4e@example.net"
+            },
+            {
+              "ID": "23005590-356a-4d15-8aeb-838ce187e9c3",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 9997895.228,
+              "uom": "om-2300559",
+              "netPrice": 5208882.21,
+              "discountPercent": 897.28,
+              "gstPercent": 642.77,
+              "lineNetAmount": 3389228.29,
+              "lineTaxAmount": 21501592.13,
+              "lineTotalAmount": 6476583.2,
+              "createdAt": "2001-12-27T00:00:00.000Z",
+              "createdBy": "createdBy.1db4f@example.org",
+              "modifiedAt": "2007-10-15T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.1db4f@example.org"
+            }
+          ],
+          "createdAt": "2010-10-16T00:00:00.000Z",
+          "createdBy": "createdBy.455m1@example.com",
+          "modifiedAt": "2011-02-22T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.455m1@example.org"
+        },
+        {
+          "ID": "69590186-a3e9-4ad2-ba15-4dbd58b2e272",
+          "lineItemNo": 70,
+          "deliveryQuantity": 25873804.194,
+          "uom": "om-6959018",
+          "batchNumber": "batchNumber-6959018",
+          "remarks": "remarks-6959018",
+          "toBillingItems": [
+            {
+              "ID": "30951063-a3bb-4172-bd62-6ad8cc805233",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 10131338.117,
+              "uom": "m-30951063",
+              "netPrice": 14886010.12,
+              "discountPercent": 131.79,
+              "gstPercent": 902.3,
+              "lineNetAmount": 28071934.31,
+              "lineTaxAmount": 9678791.3,
+              "lineTotalAmount": 9419754.3,
+              "createdAt": "2011-02-14T00:00:00.000Z",
+              "createdBy": "createdBy.ifdzr@example.com",
+              "modifiedAt": "2007-06-13T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.ifdzr@example.com"
+            },
+            {
+              "ID": "30951064-80ab-45f9-9a2f-91099010242e",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 26511249.941,
+              "uom": "m-30951064",
+              "netPrice": 1481805.22,
+              "discountPercent": 880.29,
+              "gstPercent": 585.26,
+              "lineNetAmount": 6566938.11,
+              "lineTaxAmount": 29356040.31,
+              "lineTotalAmount": 25560749.22,
+              "createdAt": "2018-01-12T00:00:00.000Z",
+              "createdBy": "createdBy.ifdzs@example.org",
+              "modifiedAt": "2020-08-18T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.ifdzs@example.net"
+            }
+          ],
+          "createdAt": "2003-08-19T00:00:00.000Z",
+          "createdBy": "createdBy.455m2@example.com",
+          "modifiedAt": "2001-07-11T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.455m2@example.net"
+        }
+      ],
+      "toBillingItems": [
+        {
+          "ID": "28407114-ad5e-4f7d-a21d-5315663f645a",
+          "quantityBilled": 30876695.242,
+          "uom": "m-28407114",
+          "netPrice": 21214022.22,
+          "discountPercent": 728.17,
+          "gstPercent": 412.26,
+          "lineNetAmount": 17446963.14,
+          "lineTaxAmount": 24084862.16,
+          "lineTotalAmount": 7581517.26,
+          "createdAt": "2001-06-28T00:00:00.000Z",
+          "createdBy": "createdBy.gwv2i@example.net",
+          "modifiedAt": "2015-06-19T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.gwv2i@example.net"
+        },
+        {
+          "ID": "28407115-e818-4c11-b29b-6cbbb696d03c",
+          "quantityBilled": 17196681.168,
+          "uom": "m-28407115",
+          "netPrice": 17494078.2,
+          "discountPercent": 879.92,
+          "gstPercent": 607.27,
+          "lineNetAmount": 31205423.69,
+          "lineTaxAmount": 20874425.9,
+          "lineTotalAmount": 14777533.17,
+          "createdAt": "2006-05-26T00:00:00.000Z",
+          "createdBy": "createdBy.gwv2j@example.net",
+          "modifiedAt": "2006-08-18T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.gwv2j@example.net"
+        }
+      ],
+      "createdAt": "2005-04-24T00:00:00.000Z",
+      "createdBy": "createdBy.73ja7@example.org",
+      "modifiedAt": "2017-02-09T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.73ja7@example.net"
+    }
+  ],
+  "toDeliveries": [
+    {
+      "ID": "23014398-6654-4a0b-b514-69638a12466a",
+      "deliveryNumber": "iveryNumber-23014398",
+      "deliveryDate": "2002-10-17",
+      "shippingPoint": "ippingPoint-23014398",
+      "status": "picked",
+      "toItems": [
+        {
+          "ID": "23077779-e6f5-4407-95fe-9ef8ed08b06c",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "lineItemNo": 6,
+          "deliveryQuantity": 8376058.114,
+          "uom": "m-23077779",
+          "batchNumber": "batchNumber-23077779",
+          "remarks": "remarks-23077779",
+          "toBillingItems": [
+            {
+              "ID": "26530105-0787-4561-91e6-485a5666b4b0",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 21020302.266,
+              "uom": "m-26530105",
+              "netPrice": 1748795.12,
+              "discountPercent": 40.27,
+              "gstPercent": 231.3,
+              "lineNetAmount": 25491292.12,
+              "lineTaxAmount": 20535902.27,
+              "lineTotalAmount": 12529228.24,
+              "createdAt": "2002-12-06T00:00:00.000Z",
+              "createdBy": "createdBy.fsmrd@example.org",
+              "modifiedAt": "2006-10-12T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.fsmrd@example.com"
+            },
+            {
+              "ID": "26530106-1f10-48b6-bec5-a6b6cd7487ca",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 15235396.34,
+              "uom": "m-26530106",
+              "netPrice": 22149795.13,
+              "discountPercent": 187.22,
+              "gstPercent": 461.29,
+              "lineNetAmount": 13969960.28,
+              "lineTaxAmount": 12187789.81,
+              "lineTotalAmount": 7512815.11,
+              "createdAt": "2010-12-16T00:00:00.000Z",
+              "createdBy": "createdBy.fsmre@example.com",
+              "modifiedAt": "2010-12-18T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.fsmre@example.com"
+            }
+          ],
+          "createdAt": "2007-08-09T00:00:00.000Z",
+          "createdBy": "createdBy.dqmxf@example.org",
+          "modifiedAt": "2021-04-16T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.dqmxf@example.com"
+        },
+        {
+          "ID": "23077780-8528-48b5-ab1d-281bfc3fdeb0",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "lineItemNo": 42,
+          "deliveryQuantity": 10575429.864,
+          "uom": "m-23077780",
+          "batchNumber": "batchNumber-23077780",
+          "remarks": "remarks-23077780",
+          "toBillingItems": [
+            {
+              "ID": "18180510-177d-4353-bc64-4d2112f9da24",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 3613315.253,
+              "uom": "m-18180510",
+              "netPrice": 27599784.19,
+              "discountPercent": 64.18,
+              "gstPercent": 437.26,
+              "lineNetAmount": 21010048.19,
+              "lineTaxAmount": 31674543.71,
+              "lineTotalAmount": 28061448.27,
+              "createdAt": "2020-06-04T00:00:00.000Z",
+              "createdBy": "createdBy.ato66@example.com",
+              "modifiedAt": "2021-06-14T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.ato66@example.org"
+            },
+            {
+              "ID": "18180511-dce7-433c-ba02-b0a1b2d575fa",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 17959479.7,
+              "uom": "m-18180511",
+              "netPrice": 5605423.57,
+              "discountPercent": 28.25,
+              "gstPercent": 425.14,
+              "lineNetAmount": 424363.12,
+              "lineTaxAmount": 2240122.21,
+              "lineTotalAmount": 19095029.8,
+              "createdAt": "2013-10-17T00:00:00.000Z",
+              "createdBy": "createdBy.ato67@example.org",
+              "modifiedAt": "2008-11-16T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.ato67@example.com"
+            }
+          ],
+          "createdAt": "2014-04-29T00:00:00.000Z",
+          "createdBy": "createdBy.dqmxg@example.org",
+          "modifiedAt": "2007-02-07T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.dqmxg@example.net"
+        }
+      ],
+      "toTransports": [
+        {
+          "ID": "30666559-b1c3-4f6a-b27c-03fc5358ce0a",
+          "transportNumber": "sportNumber-30666559",
+          "carrier": "carrier-30666559",
+          "vehicleNo": "vehicleNo-30666559",
+          "departureDateTime": "2000-05-16T00:00:00.000Z",
+          "arrivalDateTime": "2003-11-27T00:00:00.000Z",
+          "status": "status-30666559",
+          "createdAt": "2011-12-01T00:00:00.000Z",
+          "createdBy": "createdBy.i9agv@example.com",
+          "modifiedAt": "2003-01-11T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.i9agv@example.net"
+        },
+        {
+          "ID": "30666560-6c15-4381-87a8-ba8f70cca48a",
+          "transportNumber": "sportNumber-30666560",
+          "carrier": "carrier-30666560",
+          "vehicleNo": "vehicleNo-30666560",
+          "departureDateTime": "2012-02-15T00:00:00.000Z",
+          "arrivalDateTime": "2022-11-21T00:00:00.000Z",
+          "status": "status-30666560",
+          "createdAt": "2014-04-11T00:00:00.000Z",
+          "createdBy": "createdBy.i9agw@example.net",
+          "modifiedAt": "2017-12-10T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.i9agw@example.com"
+        }
+      ],
+      "toGoodsPickups": [
+        {
+          "ID": "25539277-303c-4c00-903c-c419b6514cd9",
+          "pickupDateTime": "2006-07-13T00:00:00.000Z",
+          "pickupLocation": "pickupLocation-25539277",
+          "handledBy": "handledBy-25539277",
+          "remarks": "remarks-25539277",
+          "createdAt": "2022-01-24T00:00:00.000Z",
+          "createdBy": "createdBy.f7e8d@example.org",
+          "modifiedAt": "2000-06-21T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.f7e8d@example.org"
+        },
+        {
+          "ID": "25539278-2099-4578-8b6c-864634ae2e85",
+          "pickupDateTime": "2021-05-13T00:00:00.000Z",
+          "pickupLocation": "pickupLocation-25539278",
+          "handledBy": "handledBy-25539278",
+          "remarks": "remarks-25539278",
+          "createdAt": "2017-04-17T00:00:00.000Z",
+          "createdBy": "createdBy.f7e8e@example.net",
+          "modifiedAt": "2009-04-26T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.f7e8e@example.net"
+        }
+      ],
+      "toGoodsIssues": [
+        {
+          "ID": "25581707-45cb-448e-9fad-ea9759dbe629",
+          "giNumber": "giNumber-25581707",
+          "giDateTime": "2012-08-22T00:00:00.000Z",
+          "postedBy": "postedBy-25581707",
+          "postingStatus": "stingStatus-25581707",
+          "remarks": "remarks-25581707",
+          "createdAt": "2004-12-11T00:00:00.000Z",
+          "createdBy": "createdBy.f8ayz@example.org",
+          "modifiedAt": "2007-06-03T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.f8ayz@example.net"
+        },
+        {
+          "ID": "25581708-781b-455a-bafe-9ecad6e1a23a",
+          "giNumber": "giNumber-25581708",
+          "giDateTime": "2008-11-29T00:00:00.000Z",
+          "postedBy": "postedBy-25581708",
+          "postingStatus": "stingStatus-25581708",
+          "remarks": "remarks-25581708",
+          "createdAt": "2012-08-14T00:00:00.000Z",
+          "createdBy": "createdBy.f8az0@example.org",
+          "modifiedAt": "2009-07-09T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.f8az0@example.net"
+        }
+      ],
+      "createdAt": "2001-09-28T00:00:00.000Z",
+      "createdBy": "createdBy.dpa0u@example.com",
+      "modifiedAt": "2006-06-09T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.dpa0u@example.org"
+    },
+    {
+      "ID": "23014399-a6a9-4c49-aff7-62d0f10fc148",
+      "deliveryNumber": "iveryNumber-23014399",
+      "deliveryDate": "2005-04-07",
+      "shippingPoint": "ippingPoint-23014399",
+      "status": "giPosted",
+      "toItems": [
+        {
+          "ID": "90496592-6055-410f-9aac-ddc7c55c0846",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "lineItemNo": 26,
+          "deliveryQuantity": 13077657.18,
+          "uom": "om-9049659",
+          "batchNumber": "batchNumber-9049659",
+          "remarks": "remarks-9049659",
+          "toBillingItems": [
+            {
+              "ID": "30031683-8bf7-4439-8ce8-b7a49449c007",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 7566989.26,
+              "uom": "m-30031683",
+              "netPrice": 25738180.49,
+              "discountPercent": 398.91,
+              "gstPercent": 634.31,
+              "lineNetAmount": 12082526.3,
+              "lineTaxAmount": 26479168.17,
+              "lineTotalAmount": 5625381.31,
+              "createdAt": "2012-11-11T00:00:00.000Z",
+              "createdBy": "createdBy.hvolf@example.org",
+              "modifiedAt": "2016-07-24T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.hvolf@example.net"
+            },
+            {
+              "ID": "30031684-5972-44bd-be37-cda7a299b79b",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 4333948.239,
+              "uom": "m-30031684",
+              "netPrice": 9900720.14,
+              "discountPercent": 439.16,
+              "gstPercent": 401.19,
+              "lineNetAmount": 19775175.18,
+              "lineTaxAmount": 29012534.17,
+              "lineTotalAmount": 13034732.27,
+              "createdAt": "2015-11-18T00:00:00.000Z",
+              "createdBy": "createdBy.hvolg@example.org",
+              "modifiedAt": "2021-02-19T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.hvolg@example.org"
+            }
+          ],
+          "createdAt": "2006-01-24T00:00:00.000Z",
+          "createdBy": "createdBy.5dyrf@example.net",
+          "modifiedAt": "2017-06-14T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.5dyrf@example.org"
+        },
+        {
+          "ID": "9049660c-0951-49cd-8d32-df0485ec0527",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "lineItemNo": 14,
+          "deliveryQuantity": 18459583.12,
+          "uom": "om-9049660",
+          "batchNumber": "batchNumber-9049660",
+          "remarks": "remarks-9049660",
+          "toBillingItems": [
+            {
+              "ID": "14696879-4db1-4542-b999-79c60406ace1",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 13579954.202,
+              "uom": "m-14696879",
+              "netPrice": 26248526.7,
+              "discountPercent": 963.17,
+              "gstPercent": 895.16,
+              "lineNetAmount": 30956716.3,
+              "lineTaxAmount": 24262069.52,
+              "lineTotalAmount": 25068136.12,
+              "createdAt": "2020-09-13T00:00:00.000Z",
+              "createdBy": "createdBy.8r06n@example.com",
+              "modifiedAt": "2005-03-11T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.8r06n@example.net"
+            },
+            {
+              "ID": "14696880-0d2f-4091-b3e5-50931a9cad6e",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 18365380.246,
+              "uom": "m-14696880",
+              "netPrice": 1888122.78,
+              "discountPercent": 283.16,
+              "gstPercent": 794.6,
+              "lineNetAmount": 16371870.16,
+              "lineTaxAmount": 29781371.16,
+              "lineTotalAmount": 9465056.29,
+              "createdAt": "2006-03-21T00:00:00.000Z",
+              "createdBy": "createdBy.8r06o@example.net",
+              "modifiedAt": "2022-10-28T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.8r06o@example.net"
+            }
+          ],
+          "createdAt": "2019-12-02T00:00:00.000Z",
+          "createdBy": "createdBy.5dyrg@example.net",
+          "modifiedAt": "2004-02-08T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.5dyrg@example.net"
+        }
+      ],
+      "toTransports": [
+        {
+          "ID": "15065866-9219-437d-b45c-58b6cd3d89c8",
+          "transportNumber": "sportNumber-15065866",
+          "carrier": "carrier-15065866",
+          "vehicleNo": "vehicleNo-15065866",
+          "departureDateTime": "2009-10-24T00:00:00.000Z",
+          "arrivalDateTime": "2014-07-22T00:00:00.000Z",
+          "status": "status-15065866",
+          "createdAt": "2007-07-15T00:00:00.000Z",
+          "createdBy": "createdBy.8ywwa@example.org",
+          "modifiedAt": "2023-04-02T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.8ywwa@example.com"
+        },
+        {
+          "ID": "15065867-9ff7-455d-9540-0737072ec3f4",
+          "transportNumber": "sportNumber-15065867",
+          "carrier": "carrier-15065867",
+          "vehicleNo": "vehicleNo-15065867",
+          "departureDateTime": "2005-06-27T00:00:00.000Z",
+          "arrivalDateTime": "2007-07-12T00:00:00.000Z",
+          "status": "status-15065867",
+          "createdAt": "2008-03-18T00:00:00.000Z",
+          "createdBy": "createdBy.8ywwb@example.com",
+          "modifiedAt": "2013-06-18T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.8ywwb@example.net"
+        }
+      ],
+      "toGoodsPickups": [
+        {
+          "ID": "12989415-7e07-4fb1-b583-79c0dc72ece9",
+          "pickupDateTime": "2003-10-16T00:00:00.000Z",
+          "pickupLocation": "pickupLocation-12989415",
+          "handledBy": "handledBy-12989415",
+          "remarks": "remarks-12989415",
+          "createdAt": "2008-12-02T00:00:00.000Z",
+          "createdBy": "createdBy.7qep3@example.com",
+          "modifiedAt": "2001-05-24T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.7qep3@example.net"
+        },
+        {
+          "ID": "12989416-3c3a-41b2-9ab8-524e769e2079",
+          "pickupDateTime": "2015-12-27T00:00:00.000Z",
+          "pickupLocation": "pickupLocation-12989416",
+          "handledBy": "handledBy-12989416",
+          "remarks": "remarks-12989416",
+          "createdAt": "2012-06-29T00:00:00.000Z",
+          "createdBy": "createdBy.7qep4@example.net",
+          "modifiedAt": "2009-11-10T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.7qep4@example.com"
+        }
+      ],
+      "toGoodsIssues": [
+        {
+          "ID": "37358490-9aa1-4de9-ac68-add85cb886c3",
+          "giNumber": "giNumber-3735849",
+          "giDateTime": "2000-07-07T00:00:00.000Z",
+          "postedBy": "postedBy-3735849",
+          "postingStatus": "ostingStatus-3735849",
+          "remarks": "remarks-3735849",
+          "createdAt": "2014-11-10T00:00:00.000Z",
+          "createdBy": "createdBy.282ll@example.com",
+          "modifiedAt": "2008-05-21T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.282ll@example.net"
+        },
+        {
+          "ID": "37358508-8f71-4dbf-b42d-2870c208ec57",
+          "giNumber": "giNumber-3735850",
+          "giDateTime": "2012-02-10T00:00:00.000Z",
+          "postedBy": "postedBy-3735850",
+          "postingStatus": "ostingStatus-3735850",
+          "remarks": "remarks-3735850",
+          "createdAt": "2006-02-14T00:00:00.000Z",
+          "createdBy": "createdBy.282lm@example.net",
+          "modifiedAt": "2007-02-15T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.282lm@example.net"
+        }
+      ],
+      "createdAt": "2012-07-10T00:00:00.000Z",
+      "createdBy": "createdBy.dpa0v@example.net",
+      "modifiedAt": "2019-05-25T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.dpa0v@example.org"
+    }
+  ],
+  "toBillings": [
+    {
+      "ID": "3519541b-7a7a-4ab3-a565-e07ba15b1f45",
+      "billingNumber": "illingNumber-3519541",
+      "billingDate": "2021-09-03",
+      "postingDate": "2013-12-11",
+      "currency": "541",
+      "netAmount": 10099260.71,
+      "taxAmount": 24814142.23,
+      "totalAmount": 6238335.83,
+      "status": "posted",
+      "toItems": [
+        {
+          "ID": "15856675-0b2b-4a0c-b7f9-e6733721674d",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "quantityBilled": 6714349.304,
+          "uom": "m-15856675",
+          "netPrice": 29295322.21,
+          "discountPercent": 409.21,
+          "gstPercent": 595.28,
+          "lineNetAmount": 6168767.23,
+          "lineTaxAmount": 6482233.26,
+          "lineTotalAmount": 17896347.17,
+          "createdAt": "2003-09-17T00:00:00.000Z",
+          "createdBy": "createdBy.9fv37@example.net",
+          "modifiedAt": "2018-09-26T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.9fv37@example.com"
+        },
+        {
+          "ID": "15856676-2bda-4691-a664-08bffc40a069",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "quantityBilled": 5421945.302,
+          "uom": "m-15856676",
+          "netPrice": 6194419.11,
+          "discountPercent": 218.14,
+          "gstPercent": 884.19,
+          "lineNetAmount": 30012629.28,
+          "lineTaxAmount": 19852924.81,
+          "lineTotalAmount": 29097537.29,
+          "createdAt": "2002-09-08T00:00:00.000Z",
+          "createdBy": "createdBy.9fv38@example.org",
+          "modifiedAt": "2016-08-15T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.9fv38@example.net"
+        }
+      ],
+      "toPayments": [
+        {
+          "ID": "19386456-b85f-4c99-92a2-6466629dafc4",
+          "paymentNumber": "ymentNumber-19386456",
+          "paymentDate": "2009-04-10",
+          "paymentMethod": "paymentMethod-19386456",
+          "paymentAmount": 23729085.3,
+          "currency": "456",
+          "status": "open",
+          "referenceText": "referenceText-19386456",
+          "createdAt": "2000-07-04T00:00:00.000Z",
+          "createdBy": "createdBy.bjioo@example.net",
+          "modifiedAt": "2019-09-06T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.bjioo@example.net"
+        },
+        {
+          "ID": "19386457-fe8a-4b64-9441-af55c63baf59",
+          "paymentNumber": "ymentNumber-19386457",
+          "paymentDate": "2019-09-29",
+          "paymentMethod": "paymentMethod-19386457",
+          "paymentAmount": 1014165.19,
+          "currency": "457",
+          "status": "paid",
+          "referenceText": "referenceText-19386457",
+          "createdAt": "2003-07-14T00:00:00.000Z",
+          "createdBy": "createdBy.bjiop@example.com",
+          "modifiedAt": "2015-04-07T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.bjiop@example.org"
+        }
+      ],
+      "createdAt": "2017-12-22T00:00:00.000Z",
+      "createdBy": "createdBy.23fp1@example.org",
+      "modifiedAt": "2007-03-14T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.23fp1@example.com"
+    },
+    {
+      "ID": "3519542a-4888-4374-97d1-8623bebadc45",
+      "billingNumber": "illingNumber-3519542",
+      "billingDate": "2013-05-18",
+      "postingDate": "2006-09-01",
+      "currency": "542",
+      "netAmount": 10127835.3,
+      "taxAmount": 8009736.39,
+      "totalAmount": 24993957.35,
+      "status": "draft",
+      "toItems": [
+        {
+          "ID": "7380742f-52d0-4857-a32c-fa0c7876155b",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "quantityBilled": 9181970.224,
+          "uom": "om-7380742",
+          "netPrice": 18423536.8,
+          "discountPercent": 812.21,
+          "gstPercent": 289.15,
+          "lineNetAmount": 7683126.22,
+          "lineTaxAmount": 28587037.84,
+          "lineTotalAmount": 18619582.15,
+          "createdAt": "2006-05-14T00:00:00.000Z",
+          "createdBy": "createdBy.4e70m@example.com",
+          "modifiedAt": "2023-11-25T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.4e70m@example.net"
+        },
+        {
+          "ID": "73807431-338f-4c69-84da-ed8bbef2075b",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "quantityBilled": 22629012.234,
+          "uom": "om-7380743",
+          "netPrice": 22463968.13,
+          "discountPercent": 221.92,
+          "gstPercent": 351.29,
+          "lineNetAmount": 18434038.28,
+          "lineTaxAmount": 24467925.91,
+          "lineTotalAmount": 11936188.25,
+          "createdAt": "2000-12-04T00:00:00.000Z",
+          "createdBy": "createdBy.4e70n@example.net",
+          "modifiedAt": "2014-01-21T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.4e70n@example.com"
+        }
+      ],
+      "toPayments": [
+        {
+          "ID": "16809491-653c-4e57-8cce-b218c9f902d5",
+          "paymentNumber": "ymentNumber-16809491",
+          "paymentDate": "2018-03-31",
+          "paymentMethod": "paymentMethod-16809491",
+          "paymentAmount": 18030969.66,
+          "currency": "491",
+          "status": "paid",
+          "referenceText": "referenceText-16809491",
+          "createdAt": "2008-02-13T00:00:00.000Z",
+          "createdBy": "createdBy.a0aab@example.com",
+          "modifiedAt": "2006-01-20T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.a0aab@example.org"
+        },
+        {
+          "ID": "16809492-a7dc-41c0-8c08-39eb21d91a7f",
+          "paymentNumber": "ymentNumber-16809492",
+          "paymentDate": "2015-05-17",
+          "paymentMethod": "paymentMethod-16809492",
+          "paymentAmount": 19046278.24,
+          "currency": "492",
+          "status": "paid",
+          "referenceText": "referenceText-16809492",
+          "createdAt": "2000-11-15T00:00:00.000Z",
+          "createdBy": "createdBy.a0aac@example.org",
+          "modifiedAt": "2015-07-07T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.a0aac@example.net"
+        }
+      ],
+      "createdAt": "2006-07-27T00:00:00.000Z",
+      "createdBy": "createdBy.23fp2@example.com",
+      "modifiedAt": "2018-10-16T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.23fp2@example.org"
+    }
+  ],
+  "createdAt": "2023-10-24T00:00:00.000Z",
+  "createdBy": "createdBy.pd3t@example.org",
+  "modifiedAt": "2023-09-11T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.pd3t@example.com"
+}
+
+
+### Result from POST request above
+@draftID={{SalesOrderHeader_Draft_POST.response.body.$.ID}}
+
+
+### SalesOrderHeader Draft PATCH
+# @name SalesOrderHeader_Draft_Patch
+PATCH {{server}}/odata/v4/sales-orders/SalesOrderHeader(ID={{draftID}},IsActiveEntity=false)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "salesOrderNumber": "sOrderNumber-1183385",
+  "salesOrg": "rg-1183385",
+  "distributionChannel": "el-1183385",
+  "documentDate": "2010-04-28",
+  "requestedDelivery": "2003-02-02",
+  "currency": "385",
+  "paymentTerms": "30Days",
+  "netValue": 27207440.26,
+  "taxValue": 31567022.25,
+  "grossValue": 19518184.12,
+  "status": "completed",
+  "remarks": "remarks-1183385",
+  "toItems": [
+    {
+      "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f",
+      "lineItemNo": 1,
+      "quantity": {
+        "order_quan": 14250790.202
+      },
+      "uom": "m-11922270",
+      "netPrice": 8332991.24,
+      "discountPercent": 16.17,
+      "gstPercent": 898.29,
+      "netAmount": 30092112.94,
+      "taxAmount": 17444606.29,
+      "grossAmount": 12016434.15,
+      "confirmedQuantity": 11139364.655,
+      "confirmedDate": "2002-06-26",
+      "deliveredQuantity": 18128708.5,
+      "billedQuantity": 15995856.944,
+      "openQuantity": 6612206.18,
+      "status": "open",
+      "toAvailabilityLogs": [
+        {
+          "ID": "26826573-0929-4195-9c53-883a5f0e5bb6",
+          "checkDateTime": "2020-04-16T00:00:00.000Z",
+          "plant": "t-26826573",
+          "availableQuantity": 26145837.177,
+          "requestedQuantity": 23377155.982,
+          "confirmedQuantity": 29552496.165,
+          "result": "result-26826573",
+          "message": "message-26826573",
+          "createdAt": "2002-02-04T00:00:00.000Z",
+          "createdBy": "createdBy.fyzil@example.org",
+          "modifiedAt": "2009-01-10T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.fyzil@example.net"
+        },
+        {
+          "ID": "26826574-8563-4767-9248-d41074efedde",
+          "checkDateTime": "2002-05-16T00:00:00.000Z",
+          "plant": "t-26826574",
+          "availableQuantity": 19739111.139,
+          "requestedQuantity": 29730872.265,
+          "confirmedQuantity": 2458723.16,
+          "result": "result-26826574",
+          "message": "message-26826574",
+          "createdAt": "2007-07-11T00:00:00.000Z",
+          "createdBy": "createdBy.fyzim@example.org",
+          "modifiedAt": "2014-01-03T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.fyzim@example.org"
+        }
+      ],
+      "toDeliveryItems": [
+        {
+          "ID": "18923074-1e98-4452-91bc-988cd96c4a85",
+          "lineItemNo": 89,
+          "deliveryQuantity": 29656984.243,
+          "uom": "m-18923074",
+          "batchNumber": "batchNumber-18923074",
+          "remarks": "remarks-18923074",
+          "toBillingItems": [
+            {
+              "ID": "15777222-32a3-4797-95b4-ed1bdd891e54",
+              "salesItem": {
+                "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+              },
+              "quantityBilled": 14744735.108,
+              "uom": "m-15777222",
+              "netPrice": 17307673.49,
+              "discountPercent": 299.2,
+              "gstPercent": 331.17,
+              "lineNetAmount": 23568949.97,
+              "lineTaxAmount": 2983265.87,
+              "lineTotalAmount": 5730651.2,
+              "createdAt": "2010-12-01T00:00:00.000Z",
+              "createdBy": "createdBy.9e5s6@example.com",
+              "modifiedAt": "2023-07-19T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.9e5s6@example.com"
+            },
+            {
+              "ID": "15777223-117a-40e4-93cc-b43457d2adb8",
+              "salesItem": {
+                "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+              },
+              "quantityBilled": 26702218.178,
+              "uom": "m-15777223",
+              "netPrice": 20317614.91,
+              "discountPercent": 577.4,
+              "gstPercent": 750.6,
+              "lineNetAmount": 3615735.2,
+              "lineTaxAmount": 1956522.68,
+              "lineTotalAmount": 12057894.19,
+              "createdAt": "2002-06-06T00:00:00.000Z",
+              "createdBy": "createdBy.9e5s7@example.com",
+              "modifiedAt": "2014-08-11T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.9e5s7@example.net"
+            }
+          ],
+          "createdAt": "2019-05-07T00:00:00.000Z",
+          "createdBy": "createdBy.b9l4y@example.org",
+          "modifiedAt": "2011-09-19T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.b9l4y@example.net"
+        },
+        {
+          "ID": "18923075-cc7e-4b28-b032-6bb21d322d9e",
+          "lineItemNo": 72,
+          "deliveryQuantity": 1446824.203,
+          "uom": "m-18923075",
+          "batchNumber": "batchNumber-18923075",
+          "remarks": "remarks-18923075",
+          "toBillingItems": [
+            {
+              "ID": "14094555-4807-4d93-b32b-1b4fc0f23661",
+              "salesItem": {
+                "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+              },
+              "quantityBilled": 15056672.596,
+              "uom": "m-14094555",
+              "netPrice": 8020012.98,
+              "discountPercent": 429.15,
+              "gstPercent": 928.27,
+              "lineNetAmount": 29040965.18,
+              "lineTaxAmount": 9492775.17,
+              "lineTotalAmount": 12235691.29,
+              "createdAt": "2013-11-05T00:00:00.000Z",
+              "createdBy": "createdBy.8e3ff@example.net",
+              "modifiedAt": "2008-04-30T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.8e3ff@example.org"
+            },
+            {
+              "ID": "14094556-cc05-41b6-8516-acfc26c9dccd",
+              "salesItem": {
+                "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+              },
+              "quantityBilled": 22081874.272,
+              "uom": "m-14094556",
+              "netPrice": 29796351.27,
+              "discountPercent": 67.19,
+              "gstPercent": 985.17,
+              "lineNetAmount": 27299950.71,
+              "lineTaxAmount": 7659513.93,
+              "lineTotalAmount": 9517527.27,
+              "createdAt": "2012-01-13T00:00:00.000Z",
+              "createdBy": "createdBy.8e3fg@example.org",
+              "modifiedAt": "2014-12-25T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.8e3fg@example.com"
+            }
+          ],
+          "createdAt": "2016-12-30T00:00:00.000Z",
+          "createdBy": "createdBy.b9l4z@example.net",
+          "modifiedAt": "2001-08-21T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.b9l4z@example.com"
+        }
+      ],
+      "toBillingItems": [
+        {
+          "ID": "3973929e-18fe-45cf-9d75-c8ae62adf472",
+          "quantityBilled": 1447344.431,
+          "uom": "om-3973929",
+          "netPrice": 18584721.19,
+          "discountPercent": 35.42,
+          "gstPercent": 198.12,
+          "lineNetAmount": 12867928.12,
+          "lineTaxAmount": 21043955.16,
+          "lineTotalAmount": 16015102.28,
+          "createdAt": "2007-04-27T00:00:00.000Z",
+          "createdBy": "createdBy.2d6ax@example.org",
+          "modifiedAt": "2012-06-22T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.2d6ax@example.com"
+        },
+        {
+          "ID": "3973930e-c60f-4e0c-99ac-7277ae73dbd9",
+          "quantityBilled": 29528801.216,
+          "uom": "om-3973930",
+          "netPrice": 9573094.8,
+          "discountPercent": 27.31,
+          "gstPercent": 535.26,
+          "lineNetAmount": 23620810.18,
+          "lineTaxAmount": 23723586.29,
+          "lineTotalAmount": 29858466.94,
+          "createdAt": "2008-10-07T00:00:00.000Z",
+          "createdBy": "createdBy.2d6ay@example.com",
+          "modifiedAt": "2011-08-02T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.2d6ay@example.net"
+        }
+      ],
+      "createdAt": "2020-05-28T00:00:00.000Z",
+      "createdBy": "createdBy.73ja6@example.org",
+      "modifiedAt": "2006-04-13T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.73ja6@example.org"
+    },
+    {
+      "ID": "11922271-630b-418e-9b29-a7f9ccca9354",
+      "lineItemNo": 75,
+      "quantity": {
+        "order_quan": 12776880.392
+      },
+      "uom": "m-11922271",
+      "netPrice": 10383295.12,
+      "discountPercent": 444.15,
+      "gstPercent": 696.25,
+      "netAmount": 26661002.91,
+      "taxAmount": 8522184.41,
+      "grossAmount": 7859636.34,
+      "confirmedQuantity": 12326107.133,
+      "confirmedDate": "2007-09-02",
+      "deliveredQuantity": 11300582.172,
+      "billedQuantity": 23307360.267,
+      "openQuantity": 8290940.21,
+      "status": "partiallyDelivered",
+      "toAvailabilityLogs": [
+        {
+          "ID": "12454341-0e1f-4297-96a7-1b3fe8a6a025",
+          "checkDateTime": "2022-04-23T00:00:00.000Z",
+          "plant": "t-12454341",
+          "availableQuantity": 20310231.151,
+          "requestedQuantity": 1435323.146,
+          "confirmedQuantity": 5150469.221,
+          "result": "result-12454341",
+          "message": "message-12454341",
+          "createdAt": "2010-08-30T00:00:00.000Z",
+          "createdBy": "createdBy.7extx@example.org",
+          "modifiedAt": "2017-03-30T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.7extx@example.org"
+        },
+        {
+          "ID": "12454342-7c51-4511-b9e8-47b59f4c6483",
+          "checkDateTime": "2021-09-07T00:00:00.000Z",
+          "plant": "t-12454342",
+          "availableQuantity": 12808692.831,
+          "requestedQuantity": 15823336.151,
+          "confirmedQuantity": 26468914.48,
+          "result": "result-12454342",
+          "message": "message-12454342",
+          "createdAt": "2022-12-04T00:00:00.000Z",
+          "createdBy": "createdBy.7exty@example.com",
+          "modifiedAt": "2009-09-25T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.7exty@example.org"
+        }
+      ],
+      "toDeliveryItems": [
+        {
+          "ID": "6959017c-5b53-4e6b-bcc3-e4d07f43ef58",
+          "lineItemNo": 36,
+          "deliveryQuantity": 848573.988,
+          "uom": "om-6959017",
+          "batchNumber": "batchNumber-6959017",
+          "remarks": "remarks-6959017",
+          "toBillingItems": [
+            {
+              "ID": "23005585-4542-47cf-8aec-63c81938ce55",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 27672484.526,
+              "uom": "om-2300558",
+              "netPrice": 24028589.29,
+              "discountPercent": 676.19,
+              "gstPercent": 787.16,
+              "lineNetAmount": 25086032.63,
+              "lineTaxAmount": 10959558.23,
+              "lineTotalAmount": 17800234.15,
+              "createdAt": "2017-02-09T00:00:00.000Z",
+              "createdBy": "createdBy.1db4e@example.net",
+              "modifiedAt": "2016-02-12T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.1db4e@example.net"
+            },
+            {
+              "ID": "23005590-356a-4d15-8aeb-838ce187e9c3",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 9997895.228,
+              "uom": "om-2300559",
+              "netPrice": 5208882.21,
+              "discountPercent": 897.28,
+              "gstPercent": 642.77,
+              "lineNetAmount": 3389228.29,
+              "lineTaxAmount": 21501592.13,
+              "lineTotalAmount": 6476583.2,
+              "createdAt": "2001-12-27T00:00:00.000Z",
+              "createdBy": "createdBy.1db4f@example.org",
+              "modifiedAt": "2007-10-15T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.1db4f@example.org"
+            }
+          ],
+          "createdAt": "2010-10-16T00:00:00.000Z",
+          "createdBy": "createdBy.455m1@example.com",
+          "modifiedAt": "2011-02-22T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.455m1@example.org"
+        },
+        {
+          "ID": "69590186-a3e9-4ad2-ba15-4dbd58b2e272",
+          "lineItemNo": 70,
+          "deliveryQuantity": 25873804.194,
+          "uom": "om-6959018",
+          "batchNumber": "batchNumber-6959018",
+          "remarks": "remarks-6959018",
+          "toBillingItems": [
+            {
+              "ID": "30951063-a3bb-4172-bd62-6ad8cc805233",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 10131338.117,
+              "uom": "m-30951063",
+              "netPrice": 14886010.12,
+              "discountPercent": 131.79,
+              "gstPercent": 902.3,
+              "lineNetAmount": 28071934.31,
+              "lineTaxAmount": 9678791.3,
+              "lineTotalAmount": 9419754.3,
+              "createdAt": "2011-02-14T00:00:00.000Z",
+              "createdBy": "createdBy.ifdzr@example.com",
+              "modifiedAt": "2007-06-13T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.ifdzr@example.com"
+            },
+            {
+              "ID": "30951064-80ab-45f9-9a2f-91099010242e",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 26511249.941,
+              "uom": "m-30951064",
+              "netPrice": 1481805.22,
+              "discountPercent": 880.29,
+              "gstPercent": 585.26,
+              "lineNetAmount": 6566938.11,
+              "lineTaxAmount": 29356040.31,
+              "lineTotalAmount": 25560749.22,
+              "createdAt": "2018-01-12T00:00:00.000Z",
+              "createdBy": "createdBy.ifdzs@example.org",
+              "modifiedAt": "2020-08-18T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.ifdzs@example.net"
+            }
+          ],
+          "createdAt": "2003-08-19T00:00:00.000Z",
+          "createdBy": "createdBy.455m2@example.com",
+          "modifiedAt": "2001-07-11T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.455m2@example.net"
+        }
+      ],
+      "toBillingItems": [
+        {
+          "ID": "28407114-ad5e-4f7d-a21d-5315663f645a",
+          "quantityBilled": 30876695.242,
+          "uom": "m-28407114",
+          "netPrice": 21214022.22,
+          "discountPercent": 728.17,
+          "gstPercent": 412.26,
+          "lineNetAmount": 17446963.14,
+          "lineTaxAmount": 24084862.16,
+          "lineTotalAmount": 7581517.26,
+          "createdAt": "2001-06-28T00:00:00.000Z",
+          "createdBy": "createdBy.gwv2i@example.net",
+          "modifiedAt": "2015-06-19T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.gwv2i@example.net"
+        },
+        {
+          "ID": "28407115-e818-4c11-b29b-6cbbb696d03c",
+          "quantityBilled": 17196681.168,
+          "uom": "m-28407115",
+          "netPrice": 17494078.2,
+          "discountPercent": 879.92,
+          "gstPercent": 607.27,
+          "lineNetAmount": 31205423.69,
+          "lineTaxAmount": 20874425.9,
+          "lineTotalAmount": 14777533.17,
+          "createdAt": "2006-05-26T00:00:00.000Z",
+          "createdBy": "createdBy.gwv2j@example.net",
+          "modifiedAt": "2006-08-18T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.gwv2j@example.net"
+        }
+      ],
+      "createdAt": "2005-04-24T00:00:00.000Z",
+      "createdBy": "createdBy.73ja7@example.org",
+      "modifiedAt": "2017-02-09T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.73ja7@example.net"
+    }
+  ],
+  "toDeliveries": [
+    {
+      "ID": "23014398-6654-4a0b-b514-69638a12466a",
+      "deliveryNumber": "iveryNumber-23014398",
+      "deliveryDate": "2002-10-17",
+      "shippingPoint": "ippingPoint-23014398",
+      "status": "picked",
+      "toItems": [
+        {
+          "ID": "23077779-e6f5-4407-95fe-9ef8ed08b06c",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "lineItemNo": 6,
+          "deliveryQuantity": 8376058.114,
+          "uom": "m-23077779",
+          "batchNumber": "batchNumber-23077779",
+          "remarks": "remarks-23077779",
+          "toBillingItems": [
+            {
+              "ID": "26530105-0787-4561-91e6-485a5666b4b0",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 21020302.266,
+              "uom": "m-26530105",
+              "netPrice": 1748795.12,
+              "discountPercent": 40.27,
+              "gstPercent": 231.3,
+              "lineNetAmount": 25491292.12,
+              "lineTaxAmount": 20535902.27,
+              "lineTotalAmount": 12529228.24,
+              "createdAt": "2002-12-06T00:00:00.000Z",
+              "createdBy": "createdBy.fsmrd@example.org",
+              "modifiedAt": "2006-10-12T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.fsmrd@example.com"
+            },
+            {
+              "ID": "26530106-1f10-48b6-bec5-a6b6cd7487ca",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 15235396.34,
+              "uom": "m-26530106",
+              "netPrice": 22149795.13,
+              "discountPercent": 187.22,
+              "gstPercent": 461.29,
+              "lineNetAmount": 13969960.28,
+              "lineTaxAmount": 12187789.81,
+              "lineTotalAmount": 7512815.11,
+              "createdAt": "2010-12-16T00:00:00.000Z",
+              "createdBy": "createdBy.fsmre@example.com",
+              "modifiedAt": "2010-12-18T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.fsmre@example.com"
+            }
+          ],
+          "createdAt": "2007-08-09T00:00:00.000Z",
+          "createdBy": "createdBy.dqmxf@example.org",
+          "modifiedAt": "2021-04-16T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.dqmxf@example.com"
+        },
+        {
+          "ID": "23077780-8528-48b5-ab1d-281bfc3fdeb0",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "lineItemNo": 42,
+          "deliveryQuantity": 10575429.864,
+          "uom": "m-23077780",
+          "batchNumber": "batchNumber-23077780",
+          "remarks": "remarks-23077780",
+          "toBillingItems": [
+            {
+              "ID": "18180510-177d-4353-bc64-4d2112f9da24",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 3613315.253,
+              "uom": "m-18180510",
+              "netPrice": 27599784.19,
+              "discountPercent": 64.18,
+              "gstPercent": 437.26,
+              "lineNetAmount": 21010048.19,
+              "lineTaxAmount": 31674543.71,
+              "lineTotalAmount": 28061448.27,
+              "createdAt": "2020-06-04T00:00:00.000Z",
+              "createdBy": "createdBy.ato66@example.com",
+              "modifiedAt": "2021-06-14T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.ato66@example.org"
+            },
+            {
+              "ID": "18180511-dce7-433c-ba02-b0a1b2d575fa",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 17959479.7,
+              "uom": "m-18180511",
+              "netPrice": 5605423.57,
+              "discountPercent": 28.25,
+              "gstPercent": 425.14,
+              "lineNetAmount": 424363.12,
+              "lineTaxAmount": 2240122.21,
+              "lineTotalAmount": 19095029.8,
+              "createdAt": "2013-10-17T00:00:00.000Z",
+              "createdBy": "createdBy.ato67@example.org",
+              "modifiedAt": "2008-11-16T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.ato67@example.com"
+            }
+          ],
+          "createdAt": "2014-04-29T00:00:00.000Z",
+          "createdBy": "createdBy.dqmxg@example.org",
+          "modifiedAt": "2007-02-07T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.dqmxg@example.net"
+        }
+      ],
+      "toTransports": [
+        {
+          "ID": "30666559-b1c3-4f6a-b27c-03fc5358ce0a",
+          "transportNumber": "sportNumber-30666559",
+          "carrier": "carrier-30666559",
+          "vehicleNo": "vehicleNo-30666559",
+          "departureDateTime": "2000-05-16T00:00:00.000Z",
+          "arrivalDateTime": "2003-11-27T00:00:00.000Z",
+          "status": "status-30666559",
+          "createdAt": "2011-12-01T00:00:00.000Z",
+          "createdBy": "createdBy.i9agv@example.com",
+          "modifiedAt": "2003-01-11T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.i9agv@example.net"
+        },
+        {
+          "ID": "30666560-6c15-4381-87a8-ba8f70cca48a",
+          "transportNumber": "sportNumber-30666560",
+          "carrier": "carrier-30666560",
+          "vehicleNo": "vehicleNo-30666560",
+          "departureDateTime": "2012-02-15T00:00:00.000Z",
+          "arrivalDateTime": "2022-11-21T00:00:00.000Z",
+          "status": "status-30666560",
+          "createdAt": "2014-04-11T00:00:00.000Z",
+          "createdBy": "createdBy.i9agw@example.net",
+          "modifiedAt": "2017-12-10T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.i9agw@example.com"
+        }
+      ],
+      "toGoodsPickups": [
+        {
+          "ID": "25539277-303c-4c00-903c-c419b6514cd9",
+          "pickupDateTime": "2006-07-13T00:00:00.000Z",
+          "pickupLocation": "pickupLocation-25539277",
+          "handledBy": "handledBy-25539277",
+          "remarks": "remarks-25539277",
+          "createdAt": "2022-01-24T00:00:00.000Z",
+          "createdBy": "createdBy.f7e8d@example.org",
+          "modifiedAt": "2000-06-21T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.f7e8d@example.org"
+        },
+        {
+          "ID": "25539278-2099-4578-8b6c-864634ae2e85",
+          "pickupDateTime": "2021-05-13T00:00:00.000Z",
+          "pickupLocation": "pickupLocation-25539278",
+          "handledBy": "handledBy-25539278",
+          "remarks": "remarks-25539278",
+          "createdAt": "2017-04-17T00:00:00.000Z",
+          "createdBy": "createdBy.f7e8e@example.net",
+          "modifiedAt": "2009-04-26T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.f7e8e@example.net"
+        }
+      ],
+      "toGoodsIssues": [
+        {
+          "ID": "25581707-45cb-448e-9fad-ea9759dbe629",
+          "giNumber": "giNumber-25581707",
+          "giDateTime": "2012-08-22T00:00:00.000Z",
+          "postedBy": "postedBy-25581707",
+          "postingStatus": "stingStatus-25581707",
+          "remarks": "remarks-25581707",
+          "createdAt": "2004-12-11T00:00:00.000Z",
+          "createdBy": "createdBy.f8ayz@example.org",
+          "modifiedAt": "2007-06-03T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.f8ayz@example.net"
+        },
+        {
+          "ID": "25581708-781b-455a-bafe-9ecad6e1a23a",
+          "giNumber": "giNumber-25581708",
+          "giDateTime": "2008-11-29T00:00:00.000Z",
+          "postedBy": "postedBy-25581708",
+          "postingStatus": "stingStatus-25581708",
+          "remarks": "remarks-25581708",
+          "createdAt": "2012-08-14T00:00:00.000Z",
+          "createdBy": "createdBy.f8az0@example.org",
+          "modifiedAt": "2009-07-09T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.f8az0@example.net"
+        }
+      ],
+      "createdAt": "2001-09-28T00:00:00.000Z",
+      "createdBy": "createdBy.dpa0u@example.com",
+      "modifiedAt": "2006-06-09T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.dpa0u@example.org"
+    },
+    {
+      "ID": "23014399-a6a9-4c49-aff7-62d0f10fc148",
+      "deliveryNumber": "iveryNumber-23014399",
+      "deliveryDate": "2005-04-07",
+      "shippingPoint": "ippingPoint-23014399",
+      "status": "giPosted",
+      "toItems": [
+        {
+          "ID": "90496592-6055-410f-9aac-ddc7c55c0846",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "lineItemNo": 26,
+          "deliveryQuantity": 13077657.18,
+          "uom": "om-9049659",
+          "batchNumber": "batchNumber-9049659",
+          "remarks": "remarks-9049659",
+          "toBillingItems": [
+            {
+              "ID": "30031683-8bf7-4439-8ce8-b7a49449c007",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 7566989.26,
+              "uom": "m-30031683",
+              "netPrice": 25738180.49,
+              "discountPercent": 398.91,
+              "gstPercent": 634.31,
+              "lineNetAmount": 12082526.3,
+              "lineTaxAmount": 26479168.17,
+              "lineTotalAmount": 5625381.31,
+              "createdAt": "2012-11-11T00:00:00.000Z",
+              "createdBy": "createdBy.hvolf@example.org",
+              "modifiedAt": "2016-07-24T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.hvolf@example.net"
+            },
+            {
+              "ID": "30031684-5972-44bd-be37-cda7a299b79b",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 4333948.239,
+              "uom": "m-30031684",
+              "netPrice": 9900720.14,
+              "discountPercent": 439.16,
+              "gstPercent": 401.19,
+              "lineNetAmount": 19775175.18,
+              "lineTaxAmount": 29012534.17,
+              "lineTotalAmount": 13034732.27,
+              "createdAt": "2015-11-18T00:00:00.000Z",
+              "createdBy": "createdBy.hvolg@example.org",
+              "modifiedAt": "2021-02-19T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.hvolg@example.org"
+            }
+          ],
+          "createdAt": "2006-01-24T00:00:00.000Z",
+          "createdBy": "createdBy.5dyrf@example.net",
+          "modifiedAt": "2017-06-14T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.5dyrf@example.org"
+        },
+        {
+          "ID": "9049660c-0951-49cd-8d32-df0485ec0527",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "lineItemNo": 14,
+          "deliveryQuantity": 18459583.12,
+          "uom": "om-9049660",
+          "batchNumber": "batchNumber-9049660",
+          "remarks": "remarks-9049660",
+          "toBillingItems": [
+            {
+              "ID": "14696879-4db1-4542-b999-79c60406ace1",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 13579954.202,
+              "uom": "m-14696879",
+              "netPrice": 26248526.7,
+              "discountPercent": 963.17,
+              "gstPercent": 895.16,
+              "lineNetAmount": 30956716.3,
+              "lineTaxAmount": 24262069.52,
+              "lineTotalAmount": 25068136.12,
+              "createdAt": "2020-09-13T00:00:00.000Z",
+              "createdBy": "createdBy.8r06n@example.com",
+              "modifiedAt": "2005-03-11T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.8r06n@example.net"
+            },
+            {
+              "ID": "14696880-0d2f-4091-b3e5-50931a9cad6e",
+              "salesItem": {
+                "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+              },
+              "quantityBilled": 18365380.246,
+              "uom": "m-14696880",
+              "netPrice": 1888122.78,
+              "discountPercent": 283.16,
+              "gstPercent": 794.6,
+              "lineNetAmount": 16371870.16,
+              "lineTaxAmount": 29781371.16,
+              "lineTotalAmount": 9465056.29,
+              "createdAt": "2006-03-21T00:00:00.000Z",
+              "createdBy": "createdBy.8r06o@example.net",
+              "modifiedAt": "2022-10-28T00:00:00.000Z",
+              "modifiedBy": "modifiedBy.8r06o@example.net"
+            }
+          ],
+          "createdAt": "2019-12-02T00:00:00.000Z",
+          "createdBy": "createdBy.5dyrg@example.net",
+          "modifiedAt": "2004-02-08T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.5dyrg@example.net"
+        }
+      ],
+      "toTransports": [
+        {
+          "ID": "15065866-9219-437d-b45c-58b6cd3d89c8",
+          "transportNumber": "sportNumber-15065866",
+          "carrier": "carrier-15065866",
+          "vehicleNo": "vehicleNo-15065866",
+          "departureDateTime": "2009-10-24T00:00:00.000Z",
+          "arrivalDateTime": "2014-07-22T00:00:00.000Z",
+          "status": "status-15065866",
+          "createdAt": "2007-07-15T00:00:00.000Z",
+          "createdBy": "createdBy.8ywwa@example.org",
+          "modifiedAt": "2023-04-02T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.8ywwa@example.com"
+        },
+        {
+          "ID": "15065867-9ff7-455d-9540-0737072ec3f4",
+          "transportNumber": "sportNumber-15065867",
+          "carrier": "carrier-15065867",
+          "vehicleNo": "vehicleNo-15065867",
+          "departureDateTime": "2005-06-27T00:00:00.000Z",
+          "arrivalDateTime": "2007-07-12T00:00:00.000Z",
+          "status": "status-15065867",
+          "createdAt": "2008-03-18T00:00:00.000Z",
+          "createdBy": "createdBy.8ywwb@example.com",
+          "modifiedAt": "2013-06-18T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.8ywwb@example.net"
+        }
+      ],
+      "toGoodsPickups": [
+        {
+          "ID": "12989415-7e07-4fb1-b583-79c0dc72ece9",
+          "pickupDateTime": "2003-10-16T00:00:00.000Z",
+          "pickupLocation": "pickupLocation-12989415",
+          "handledBy": "handledBy-12989415",
+          "remarks": "remarks-12989415",
+          "createdAt": "2008-12-02T00:00:00.000Z",
+          "createdBy": "createdBy.7qep3@example.com",
+          "modifiedAt": "2001-05-24T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.7qep3@example.net"
+        },
+        {
+          "ID": "12989416-3c3a-41b2-9ab8-524e769e2079",
+          "pickupDateTime": "2015-12-27T00:00:00.000Z",
+          "pickupLocation": "pickupLocation-12989416",
+          "handledBy": "handledBy-12989416",
+          "remarks": "remarks-12989416",
+          "createdAt": "2012-06-29T00:00:00.000Z",
+          "createdBy": "createdBy.7qep4@example.net",
+          "modifiedAt": "2009-11-10T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.7qep4@example.com"
+        }
+      ],
+      "toGoodsIssues": [
+        {
+          "ID": "37358490-9aa1-4de9-ac68-add85cb886c3",
+          "giNumber": "giNumber-3735849",
+          "giDateTime": "2000-07-07T00:00:00.000Z",
+          "postedBy": "postedBy-3735849",
+          "postingStatus": "ostingStatus-3735849",
+          "remarks": "remarks-3735849",
+          "createdAt": "2014-11-10T00:00:00.000Z",
+          "createdBy": "createdBy.282ll@example.com",
+          "modifiedAt": "2008-05-21T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.282ll@example.net"
+        },
+        {
+          "ID": "37358508-8f71-4dbf-b42d-2870c208ec57",
+          "giNumber": "giNumber-3735850",
+          "giDateTime": "2012-02-10T00:00:00.000Z",
+          "postedBy": "postedBy-3735850",
+          "postingStatus": "ostingStatus-3735850",
+          "remarks": "remarks-3735850",
+          "createdAt": "2006-02-14T00:00:00.000Z",
+          "createdBy": "createdBy.282lm@example.net",
+          "modifiedAt": "2007-02-15T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.282lm@example.net"
+        }
+      ],
+      "createdAt": "2012-07-10T00:00:00.000Z",
+      "createdBy": "createdBy.dpa0v@example.net",
+      "modifiedAt": "2019-05-25T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.dpa0v@example.org"
+    }
+  ],
+  "toBillings": [
+    {
+      "ID": "3519541b-7a7a-4ab3-a565-e07ba15b1f45",
+      "billingNumber": "illingNumber-3519541",
+      "billingDate": "2021-09-03",
+      "postingDate": "2013-12-11",
+      "currency": "541",
+      "netAmount": 10099260.71,
+      "taxAmount": 24814142.23,
+      "totalAmount": 6238335.83,
+      "status": "posted",
+      "toItems": [
+        {
+          "ID": "15856675-0b2b-4a0c-b7f9-e6733721674d",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "quantityBilled": 6714349.304,
+          "uom": "m-15856675",
+          "netPrice": 29295322.21,
+          "discountPercent": 409.21,
+          "gstPercent": 595.28,
+          "lineNetAmount": 6168767.23,
+          "lineTaxAmount": 6482233.26,
+          "lineTotalAmount": 17896347.17,
+          "createdAt": "2003-09-17T00:00:00.000Z",
+          "createdBy": "createdBy.9fv37@example.net",
+          "modifiedAt": "2018-09-26T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.9fv37@example.com"
+        },
+        {
+          "ID": "15856676-2bda-4691-a664-08bffc40a069",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "quantityBilled": 5421945.302,
+          "uom": "m-15856676",
+          "netPrice": 6194419.11,
+          "discountPercent": 218.14,
+          "gstPercent": 884.19,
+          "lineNetAmount": 30012629.28,
+          "lineTaxAmount": 19852924.81,
+          "lineTotalAmount": 29097537.29,
+          "createdAt": "2002-09-08T00:00:00.000Z",
+          "createdBy": "createdBy.9fv38@example.org",
+          "modifiedAt": "2016-08-15T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.9fv38@example.net"
+        }
+      ],
+      "toPayments": [
+        {
+          "ID": "19386456-b85f-4c99-92a2-6466629dafc4",
+          "paymentNumber": "ymentNumber-19386456",
+          "paymentDate": "2009-04-10",
+          "paymentMethod": "paymentMethod-19386456",
+          "paymentAmount": 23729085.3,
+          "currency": "456",
+          "status": "open",
+          "referenceText": "referenceText-19386456",
+          "createdAt": "2000-07-04T00:00:00.000Z",
+          "createdBy": "createdBy.bjioo@example.net",
+          "modifiedAt": "2019-09-06T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.bjioo@example.net"
+        },
+        {
+          "ID": "19386457-fe8a-4b64-9441-af55c63baf59",
+          "paymentNumber": "ymentNumber-19386457",
+          "paymentDate": "2019-09-29",
+          "paymentMethod": "paymentMethod-19386457",
+          "paymentAmount": 1014165.19,
+          "currency": "457",
+          "status": "paid",
+          "referenceText": "referenceText-19386457",
+          "createdAt": "2003-07-14T00:00:00.000Z",
+          "createdBy": "createdBy.bjiop@example.com",
+          "modifiedAt": "2015-04-07T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.bjiop@example.org"
+        }
+      ],
+      "createdAt": "2017-12-22T00:00:00.000Z",
+      "createdBy": "createdBy.23fp1@example.org",
+      "modifiedAt": "2007-03-14T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.23fp1@example.com"
+    },
+    {
+      "ID": "3519542a-4888-4374-97d1-8623bebadc45",
+      "billingNumber": "illingNumber-3519542",
+      "billingDate": "2013-05-18",
+      "postingDate": "2006-09-01",
+      "currency": "542",
+      "netAmount": 10127835.3,
+      "taxAmount": 8009736.39,
+      "totalAmount": 24993957.35,
+      "status": "draft",
+      "toItems": [
+        {
+          "ID": "7380742f-52d0-4857-a32c-fa0c7876155b",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "quantityBilled": 9181970.224,
+          "uom": "om-7380742",
+          "netPrice": 18423536.8,
+          "discountPercent": 812.21,
+          "gstPercent": 289.15,
+          "lineNetAmount": 7683126.22,
+          "lineTaxAmount": 28587037.84,
+          "lineTotalAmount": 18619582.15,
+          "createdAt": "2006-05-14T00:00:00.000Z",
+          "createdBy": "createdBy.4e70m@example.com",
+          "modifiedAt": "2023-11-25T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.4e70m@example.net"
+        },
+        {
+          "ID": "73807431-338f-4c69-84da-ed8bbef2075b",
+          "salesItem": {
+            "ID": "11922271-630b-418e-9b29-a7f9ccca9354"
+          },
+          "quantityBilled": 22629012.234,
+          "uom": "om-7380743",
+          "netPrice": 22463968.13,
+          "discountPercent": 221.92,
+          "gstPercent": 351.29,
+          "lineNetAmount": 18434038.28,
+          "lineTaxAmount": 24467925.91,
+          "lineTotalAmount": 11936188.25,
+          "createdAt": "2000-12-04T00:00:00.000Z",
+          "createdBy": "createdBy.4e70n@example.net",
+          "modifiedAt": "2014-01-21T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.4e70n@example.com"
+        }
+      ],
+      "toPayments": [
+        {
+          "ID": "16809491-653c-4e57-8cce-b218c9f902d5",
+          "paymentNumber": "ymentNumber-16809491",
+          "paymentDate": "2018-03-31",
+          "paymentMethod": "paymentMethod-16809491",
+          "paymentAmount": 18030969.66,
+          "currency": "491",
+          "status": "paid",
+          "referenceText": "referenceText-16809491",
+          "createdAt": "2008-02-13T00:00:00.000Z",
+          "createdBy": "createdBy.a0aab@example.com",
+          "modifiedAt": "2006-01-20T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.a0aab@example.org"
+        },
+        {
+          "ID": "16809492-a7dc-41c0-8c08-39eb21d91a7f",
+          "paymentNumber": "ymentNumber-16809492",
+          "paymentDate": "2015-05-17",
+          "paymentMethod": "paymentMethod-16809492",
+          "paymentAmount": 19046278.24,
+          "currency": "492",
+          "status": "paid",
+          "referenceText": "referenceText-16809492",
+          "createdAt": "2000-11-15T00:00:00.000Z",
+          "createdBy": "createdBy.a0aac@example.org",
+          "modifiedAt": "2015-07-07T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.a0aac@example.net"
+        }
+      ],
+      "createdAt": "2006-07-27T00:00:00.000Z",
+      "createdBy": "createdBy.23fp2@example.com",
+      "modifiedAt": "2018-10-16T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.23fp2@example.org"
+    }
+  ],
+  "createdAt": "2023-10-24T00:00:00.000Z",
+  "createdBy": "createdBy.pd3t@example.org",
+  "modifiedAt": "2023-09-11T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.pd3t@example.com"
+}
+
+
+### SalesOrderHeader Draft Prepare
+# @name SalesOrderHeader_Draft_Prepare
+POST {{server}}/odata/v4/sales-orders/SalesOrderHeader(ID={{draftID}},IsActiveEntity=false)/SalesOrderService.draftPrepare
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### SalesOrderHeader Draft Activate
+# @name SalesOrderHeader_Draft_Activate
+POST {{server}}/odata/v4/sales-orders/SalesOrderHeader(ID={{draftID}},IsActiveEntity=false)/SalesOrderService.draftActivate
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{}
+
+
+### SalesOrderItem
+# @name SalesOrderItem_GET
+GET {{server}}/odata/v4/sales-orders/SalesOrderItem
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderItem
+# @name SalesOrderItem_POST
+POST {{server}}/odata/v4/sales-orders/SalesOrderItem
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f",
+  "lineItemNo": 1,
+  "quantity": {
+    "order_quan": 14250790.202
+  },
+  "uom": "m-11922270",
+  "netPrice": 8332991.24,
+  "discountPercent": 16.17,
+  "gstPercent": 898.29,
+  "netAmount": 30092112.94,
+  "taxAmount": 17444606.29,
+  "grossAmount": 12016434.15,
+  "confirmedQuantity": 11139364.655,
+  "confirmedDate": "2002-06-26",
+  "deliveredQuantity": 18128708.5,
+  "billedQuantity": 15995856.944,
+  "openQuantity": 6612206.18,
+  "status": "open",
+  "toAvailabilityLogs": [
+    {
+      "ID": "26826573-0929-4195-9c53-883a5f0e5bb6",
+      "checkDateTime": "2020-04-16T00:00:00.000Z",
+      "plant": "t-26826573",
+      "availableQuantity": 26145837.177,
+      "requestedQuantity": 23377155.982,
+      "confirmedQuantity": 29552496.165,
+      "result": "result-26826573",
+      "message": "message-26826573",
+      "createdAt": "2002-02-04T00:00:00.000Z",
+      "createdBy": "createdBy.fyzil@example.org",
+      "modifiedAt": "2009-01-10T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.fyzil@example.net"
+    },
+    {
+      "ID": "26826574-8563-4767-9248-d41074efedde",
+      "checkDateTime": "2002-05-16T00:00:00.000Z",
+      "plant": "t-26826574",
+      "availableQuantity": 19739111.139,
+      "requestedQuantity": 29730872.265,
+      "confirmedQuantity": 2458723.16,
+      "result": "result-26826574",
+      "message": "message-26826574",
+      "createdAt": "2007-07-11T00:00:00.000Z",
+      "createdBy": "createdBy.fyzim@example.org",
+      "modifiedAt": "2014-01-03T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.fyzim@example.org"
+    }
+  ],
+  "toDeliveryItems": [
+    {
+      "ID": "18923074-1e98-4452-91bc-988cd96c4a85",
+      "lineItemNo": 89,
+      "deliveryQuantity": 29656984.243,
+      "uom": "m-18923074",
+      "batchNumber": "batchNumber-18923074",
+      "remarks": "remarks-18923074",
+      "toBillingItems": [
+        {
+          "ID": "15777222-32a3-4797-95b4-ed1bdd891e54",
+          "salesItem": {
+            "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+          },
+          "quantityBilled": 14744735.108,
+          "uom": "m-15777222",
+          "netPrice": 17307673.49,
+          "discountPercent": 299.2,
+          "gstPercent": 331.17,
+          "lineNetAmount": 23568949.97,
+          "lineTaxAmount": 2983265.87,
+          "lineTotalAmount": 5730651.2,
+          "createdAt": "2010-12-01T00:00:00.000Z",
+          "createdBy": "createdBy.9e5s6@example.com",
+          "modifiedAt": "2023-07-19T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.9e5s6@example.com"
+        },
+        {
+          "ID": "15777223-117a-40e4-93cc-b43457d2adb8",
+          "salesItem": {
+            "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+          },
+          "quantityBilled": 26702218.178,
+          "uom": "m-15777223",
+          "netPrice": 20317614.91,
+          "discountPercent": 577.4,
+          "gstPercent": 750.6,
+          "lineNetAmount": 3615735.2,
+          "lineTaxAmount": 1956522.68,
+          "lineTotalAmount": 12057894.19,
+          "createdAt": "2002-06-06T00:00:00.000Z",
+          "createdBy": "createdBy.9e5s7@example.com",
+          "modifiedAt": "2014-08-11T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.9e5s7@example.net"
+        }
+      ],
+      "createdAt": "2019-05-07T00:00:00.000Z",
+      "createdBy": "createdBy.b9l4y@example.org",
+      "modifiedAt": "2011-09-19T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.b9l4y@example.net"
+    },
+    {
+      "ID": "18923075-cc7e-4b28-b032-6bb21d322d9e",
+      "lineItemNo": 72,
+      "deliveryQuantity": 1446824.203,
+      "uom": "m-18923075",
+      "batchNumber": "batchNumber-18923075",
+      "remarks": "remarks-18923075",
+      "toBillingItems": [
+        {
+          "ID": "14094555-4807-4d93-b32b-1b4fc0f23661",
+          "salesItem": {
+            "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+          },
+          "quantityBilled": 15056672.596,
+          "uom": "m-14094555",
+          "netPrice": 8020012.98,
+          "discountPercent": 429.15,
+          "gstPercent": 928.27,
+          "lineNetAmount": 29040965.18,
+          "lineTaxAmount": 9492775.17,
+          "lineTotalAmount": 12235691.29,
+          "createdAt": "2013-11-05T00:00:00.000Z",
+          "createdBy": "createdBy.8e3ff@example.net",
+          "modifiedAt": "2008-04-30T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.8e3ff@example.org"
+        },
+        {
+          "ID": "14094556-cc05-41b6-8516-acfc26c9dccd",
+          "salesItem": {
+            "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+          },
+          "quantityBilled": 22081874.272,
+          "uom": "m-14094556",
+          "netPrice": 29796351.27,
+          "discountPercent": 67.19,
+          "gstPercent": 985.17,
+          "lineNetAmount": 27299950.71,
+          "lineTaxAmount": 7659513.93,
+          "lineTotalAmount": 9517527.27,
+          "createdAt": "2012-01-13T00:00:00.000Z",
+          "createdBy": "createdBy.8e3fg@example.org",
+          "modifiedAt": "2014-12-25T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.8e3fg@example.com"
+        }
+      ],
+      "createdAt": "2016-12-30T00:00:00.000Z",
+      "createdBy": "createdBy.b9l4z@example.net",
+      "modifiedAt": "2001-08-21T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.b9l4z@example.com"
+    }
+  ],
+  "toBillingItems": [
+    {
+      "ID": "3973929e-18fe-45cf-9d75-c8ae62adf472",
+      "quantityBilled": 1447344.431,
+      "uom": "om-3973929",
+      "netPrice": 18584721.19,
+      "discountPercent": 35.42,
+      "gstPercent": 198.12,
+      "lineNetAmount": 12867928.12,
+      "lineTaxAmount": 21043955.16,
+      "lineTotalAmount": 16015102.28,
+      "createdAt": "2007-04-27T00:00:00.000Z",
+      "createdBy": "createdBy.2d6ax@example.org",
+      "modifiedAt": "2012-06-22T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.2d6ax@example.com"
+    },
+    {
+      "ID": "3973930e-c60f-4e0c-99ac-7277ae73dbd9",
+      "quantityBilled": 29528801.216,
+      "uom": "om-3973930",
+      "netPrice": 9573094.8,
+      "discountPercent": 27.31,
+      "gstPercent": 535.26,
+      "lineNetAmount": 23620810.18,
+      "lineTaxAmount": 23723586.29,
+      "lineTotalAmount": 29858466.94,
+      "createdAt": "2008-10-07T00:00:00.000Z",
+      "createdBy": "createdBy.2d6ay@example.com",
+      "modifiedAt": "2011-08-02T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.2d6ay@example.net"
+    }
+  ],
+  "createdAt": "2020-05-28T00:00:00.000Z",
+  "createdBy": "createdBy.73ja6@example.org",
+  "modifiedAt": "2006-04-13T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.73ja6@example.org"
+}
+
+
+### SalesOrderItem
+# @name SalesOrderItem_PATCH
+PATCH {{server}}/odata/v4/sales-orders/SalesOrderItem/11922270-bce4-4baf-9144-7fdfe7e9fe9f
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f",
+  "lineItemNo": 1,
+  "quantity": {
+    "order_quan": 14250790.202
+  },
+  "uom": "m-11922270",
+  "netPrice": 8332991.24,
+  "discountPercent": 16.17,
+  "gstPercent": 898.29,
+  "netAmount": 30092112.94,
+  "taxAmount": 17444606.29,
+  "grossAmount": 12016434.15,
+  "confirmedQuantity": 11139364.655,
+  "confirmedDate": "2002-06-26",
+  "deliveredQuantity": 18128708.5,
+  "billedQuantity": 15995856.944,
+  "openQuantity": 6612206.18,
+  "status": "open",
+  "toAvailabilityLogs": [
+    {
+      "ID": "26826573-0929-4195-9c53-883a5f0e5bb6",
+      "checkDateTime": "2020-04-16T00:00:00.000Z",
+      "plant": "t-26826573",
+      "availableQuantity": 26145837.177,
+      "requestedQuantity": 23377155.982,
+      "confirmedQuantity": 29552496.165,
+      "result": "result-26826573",
+      "message": "message-26826573",
+      "createdAt": "2002-02-04T00:00:00.000Z",
+      "createdBy": "createdBy.fyzil@example.org",
+      "modifiedAt": "2009-01-10T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.fyzil@example.net"
+    },
+    {
+      "ID": "26826574-8563-4767-9248-d41074efedde",
+      "checkDateTime": "2002-05-16T00:00:00.000Z",
+      "plant": "t-26826574",
+      "availableQuantity": 19739111.139,
+      "requestedQuantity": 29730872.265,
+      "confirmedQuantity": 2458723.16,
+      "result": "result-26826574",
+      "message": "message-26826574",
+      "createdAt": "2007-07-11T00:00:00.000Z",
+      "createdBy": "createdBy.fyzim@example.org",
+      "modifiedAt": "2014-01-03T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.fyzim@example.org"
+    }
+  ],
+  "toDeliveryItems": [
+    {
+      "ID": "18923074-1e98-4452-91bc-988cd96c4a85",
+      "lineItemNo": 89,
+      "deliveryQuantity": 29656984.243,
+      "uom": "m-18923074",
+      "batchNumber": "batchNumber-18923074",
+      "remarks": "remarks-18923074",
+      "toBillingItems": [
+        {
+          "ID": "15777222-32a3-4797-95b4-ed1bdd891e54",
+          "salesItem": {
+            "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+          },
+          "quantityBilled": 14744735.108,
+          "uom": "m-15777222",
+          "netPrice": 17307673.49,
+          "discountPercent": 299.2,
+          "gstPercent": 331.17,
+          "lineNetAmount": 23568949.97,
+          "lineTaxAmount": 2983265.87,
+          "lineTotalAmount": 5730651.2,
+          "createdAt": "2010-12-01T00:00:00.000Z",
+          "createdBy": "createdBy.9e5s6@example.com",
+          "modifiedAt": "2023-07-19T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.9e5s6@example.com"
+        },
+        {
+          "ID": "15777223-117a-40e4-93cc-b43457d2adb8",
+          "salesItem": {
+            "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+          },
+          "quantityBilled": 26702218.178,
+          "uom": "m-15777223",
+          "netPrice": 20317614.91,
+          "discountPercent": 577.4,
+          "gstPercent": 750.6,
+          "lineNetAmount": 3615735.2,
+          "lineTaxAmount": 1956522.68,
+          "lineTotalAmount": 12057894.19,
+          "createdAt": "2002-06-06T00:00:00.000Z",
+          "createdBy": "createdBy.9e5s7@example.com",
+          "modifiedAt": "2014-08-11T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.9e5s7@example.net"
+        }
+      ],
+      "createdAt": "2019-05-07T00:00:00.000Z",
+      "createdBy": "createdBy.b9l4y@example.org",
+      "modifiedAt": "2011-09-19T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.b9l4y@example.net"
+    },
+    {
+      "ID": "18923075-cc7e-4b28-b032-6bb21d322d9e",
+      "lineItemNo": 72,
+      "deliveryQuantity": 1446824.203,
+      "uom": "m-18923075",
+      "batchNumber": "batchNumber-18923075",
+      "remarks": "remarks-18923075",
+      "toBillingItems": [
+        {
+          "ID": "14094555-4807-4d93-b32b-1b4fc0f23661",
+          "salesItem": {
+            "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+          },
+          "quantityBilled": 15056672.596,
+          "uom": "m-14094555",
+          "netPrice": 8020012.98,
+          "discountPercent": 429.15,
+          "gstPercent": 928.27,
+          "lineNetAmount": 29040965.18,
+          "lineTaxAmount": 9492775.17,
+          "lineTotalAmount": 12235691.29,
+          "createdAt": "2013-11-05T00:00:00.000Z",
+          "createdBy": "createdBy.8e3ff@example.net",
+          "modifiedAt": "2008-04-30T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.8e3ff@example.org"
+        },
+        {
+          "ID": "14094556-cc05-41b6-8516-acfc26c9dccd",
+          "salesItem": {
+            "ID": "11922270-bce4-4baf-9144-7fdfe7e9fe9f"
+          },
+          "quantityBilled": 22081874.272,
+          "uom": "m-14094556",
+          "netPrice": 29796351.27,
+          "discountPercent": 67.19,
+          "gstPercent": 985.17,
+          "lineNetAmount": 27299950.71,
+          "lineTaxAmount": 7659513.93,
+          "lineTotalAmount": 9517527.27,
+          "createdAt": "2012-01-13T00:00:00.000Z",
+          "createdBy": "createdBy.8e3fg@example.org",
+          "modifiedAt": "2014-12-25T00:00:00.000Z",
+          "modifiedBy": "modifiedBy.8e3fg@example.com"
+        }
+      ],
+      "createdAt": "2016-12-30T00:00:00.000Z",
+      "createdBy": "createdBy.b9l4z@example.net",
+      "modifiedAt": "2001-08-21T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.b9l4z@example.com"
+    }
+  ],
+  "toBillingItems": [
+    {
+      "ID": "3973929e-18fe-45cf-9d75-c8ae62adf472",
+      "quantityBilled": 1447344.431,
+      "uom": "om-3973929",
+      "netPrice": 18584721.19,
+      "discountPercent": 35.42,
+      "gstPercent": 198.12,
+      "lineNetAmount": 12867928.12,
+      "lineTaxAmount": 21043955.16,
+      "lineTotalAmount": 16015102.28,
+      "createdAt": "2007-04-27T00:00:00.000Z",
+      "createdBy": "createdBy.2d6ax@example.org",
+      "modifiedAt": "2012-06-22T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.2d6ax@example.com"
+    },
+    {
+      "ID": "3973930e-c60f-4e0c-99ac-7277ae73dbd9",
+      "quantityBilled": 29528801.216,
+      "uom": "om-3973930",
+      "netPrice": 9573094.8,
+      "discountPercent": 27.31,
+      "gstPercent": 535.26,
+      "lineNetAmount": 23620810.18,
+      "lineTaxAmount": 23723586.29,
+      "lineTotalAmount": 29858466.94,
+      "createdAt": "2008-10-07T00:00:00.000Z",
+      "createdBy": "createdBy.2d6ay@example.com",
+      "modifiedAt": "2011-08-02T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.2d6ay@example.net"
+    }
+  ],
+  "createdAt": "2020-05-28T00:00:00.000Z",
+  "createdBy": "createdBy.73ja6@example.org",
+  "modifiedAt": "2006-04-13T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.73ja6@example.org"
+}
+
+
+### SalesOrderItem
+# @name SalesOrderItem_DELETE
+DELETE {{server}}/odata/v4/sales-orders/SalesOrderItem/11922270-bce4-4baf-9144-7fdfe7e9fe9f
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### AvailabilityCheck
+# @name AvailabilityCheck_GET
+GET {{server}}/odata/v4/sales-orders/AvailabilityCheck
+Authorization: Basic {{username}}:{{password}}
+
+
+### AvailabilityCheck
+# @name AvailabilityCheck_POST
+POST {{server}}/odata/v4/sales-orders/AvailabilityCheck
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "26826573-0929-4195-9c53-883a5f0e5bb6",
+  "checkDateTime": "2020-04-16T00:00:00.000Z",
+  "plant": "t-26826573",
+  "availableQuantity": 26145837.177,
+  "requestedQuantity": 23377155.982,
+  "confirmedQuantity": 29552496.165,
+  "result": "result-26826573",
+  "message": "message-26826573",
+  "createdAt": "2002-02-04T00:00:00.000Z",
+  "createdBy": "createdBy.fyzil@example.org",
+  "modifiedAt": "2009-01-10T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.fyzil@example.net"
+}
+
+
+### AvailabilityCheck
+# @name AvailabilityCheck_PATCH
+PATCH {{server}}/odata/v4/sales-orders/AvailabilityCheck/26826573-0929-4195-9c53-883a5f0e5bb6
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "26826573-0929-4195-9c53-883a5f0e5bb6",
+  "checkDateTime": "2020-04-16T00:00:00.000Z",
+  "plant": "t-26826573",
+  "availableQuantity": 26145837.177,
+  "requestedQuantity": 23377155.982,
+  "confirmedQuantity": 29552496.165,
+  "result": "result-26826573",
+  "message": "message-26826573",
+  "createdAt": "2002-02-04T00:00:00.000Z",
+  "createdBy": "createdBy.fyzil@example.org",
+  "modifiedAt": "2009-01-10T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.fyzil@example.net"
+}
+
+
+### AvailabilityCheck
+# @name AvailabilityCheck_DELETE
+DELETE {{server}}/odata/v4/sales-orders/AvailabilityCheck/26826573-0929-4195-9c53-883a5f0e5bb6
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

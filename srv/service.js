@@ -1,38 +1,74 @@
-const cds = require("@sap/cds");
-const { SELECT } = cds.ql;
+const cds = require('@sap/cds')
 
 module.exports = cds.service.impl(function () {
+  const Header = this.entities?.PurchaseOrderHeader
+  const Item   = this.entities?.PurchaseOrderItem
 
-  // ✅ use entity name as STRING to avoid undefined entity reference
-  const ENTITY = "PurchaseOrderHeader";
+  if (!Header || !Item) {
+    console.warn('PurchaseOrder entities not found – check service CDS')
+    return
+  }
 
-  this.before(["CREATE", "UPDATE"], ENTITY, (req) => {
-    const d = req.data;
+  /**
+  
+   * PURCHASE ORDER HEADER
+  
+   */
 
-    if (!d.poNumber || String(d.poNumber).trim() === "") req.error(400, "PO Number is mandatory");
-    if (!d.documentDate) req.error(400, "Document Date is mandatory");
-    if (!d.deliveryDate) req.error(400, "Delivery Date is mandatory");
-
-    if (d.documentDate && d.deliveryDate && String(d.deliveryDate) < String(d.documentDate)) {
-      req.error(400, "Delivery Date cannot be before Document Date");
+  // Validate Header CREATE
+  this.before('CREATE', Header, req => {
+    if (!req.data.poNumber) {
+      req.error(400, 'poNumber is mandatory')
     }
 
-    const allowed = ["draft", "submitted", "approved", "rejected", "closed", "cancelled"];
-    if (d.status && !allowed.includes(String(d.status))) {
-      req.error(400, `Status must be one of: ${allowed.join(", ")}`);
+    if (!req.data.currency) {
+      req.error(400, 'currency is mandatory')
     }
-  });
+  })
 
-  this.on("CREATE", ENTITY, async (req, next) => {
-    const { poNumber } = req.data;
+  // Validate Header UPDATE
+  this.before('UPDATE', Header, req => {
+    if (req.data.status === 'CLOSED') {
+      req.error(400, 'Closed PO cannot be updated')
+    }
+  })
 
-    const exists = await SELECT.one.from(ENTITY).where({ poNumber });
-    if (exists) req.error(409, `PO Number '${poNumber}' already exists`);
+  /**
+  
+   * PURCHASE ORDER ITEM
+  
+   */
 
-    return next();
-  });
+  // Validate Item CREATE & UPDATE
+  this.before(['CREATE', 'UPDATE'], Item, req => {
 
-  this.after("CREATE", ENTITY, (data, req) => {
-    req.info(`PO created successfully (${data.poNumber || data.ID})`);
-  });
-});
+    // Quantity check
+    const qty = req.data?.quantity?.order_quan
+    if (!qty || qty <= 0) {
+      req.error(400, 'quantity.order_quan must be greater than 0')
+    }
+
+    // Price check
+    if (req.data.netPrice !== undefined && req.data.netPrice <= 0) {
+      req.error(400, 'netPrice must be greater than 0')
+    }
+
+    // Discount check
+    if (req.data.discountPercent > 100) {
+      req.error(400, 'discountPercent cannot exceed 100')
+    }
+  })
+
+
+  
+  
+  
+   
+  this.after('CREATE', Header, data => {
+    console.log('PO Header created:', data.ID)
+  })
+
+  this.after('CREATE', Item, data => {
+    console.log('PO Item created:', data.ID)
+  })
+})

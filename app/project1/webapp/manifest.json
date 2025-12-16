@@ -84,7 +84,8 @@
       "odataVersion": "4.0",
       "operationMode": "Server",
       "autoExpandSelect": true
-    }
+    },
+    "defaultBindingMode": "OneWay"
   },
 
   "si": {
@@ -174,7 +175,8 @@
     { "pattern": "Material", "name": "Material", "target": "Material" },
 
     { "pattern": "PurchaseOrderHeader", "name": "PurchaseOrderHeader", "target": "PurchaseOrderHeader" },
-    { "pattern": "PurchaseOrderItem", "name": "PurchaseOrderItem", "target": "PurchaseOrderItem" },
+    { "pattern": "PurchaseOrderHeader/{headerId}/items", "name": "PurchaseOrderItem", "target": "PurchaseOrderItem" },
+
 
     { "pattern": "SalesInquiryHeader", "name": "SalesInquiryHeader", "target": "SalesInquiryHeader" },
     { "pattern": "SalesInquiryItem", "name": "SalesInquiryItem", "target": "SalesInquiryItem" },

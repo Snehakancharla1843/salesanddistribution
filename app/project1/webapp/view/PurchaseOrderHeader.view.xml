@@ -4,7 +4,10 @@
   xmlns:core="sap.ui.core"
   controllerName="project1.controller.PurchaseOrderHeader">
 
-  <Page id="_IDGenPage3" title="Purchase Order Header" showNavButton="true" navButtonPress=".onNavBack">
+  <Page id="_IDGenPage3" title="Purchase Order Header"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
     <content>
 
       <Table
@@ -12,17 +15,6 @@
         growing="true"
         mode="SingleSelectLeft"
         items="{po>/PurchaseOrderHeader}">
-
-        <headerToolbar>
-          <Toolbar id="_IDGenToolbar">
-            <Title id="_IDGenTitle" text="Purchase Orders"/>
-            <ToolbarSpacer id="_IDGenToolbarSpacer"/>
-            <Button id="_IDGenButton" text="Create" type="Emphasized" press=".onCreate"/>
-            <Button id="_IDGenButton1" text="Delete" type="Negative" press=".onDelete"/>
-            <Button id="_IDGenButton2" text="Save" press=".onSave"/>
-            <Button id="_IDGenButton3" text="Cancel" press=".onCancel"/>
-          </Toolbar>
-        </headerToolbar>
 
         <columns>
           <Column id="_IDGenColumn15"><Text id="_IDGenText31" text="ID"/></Column>
@@ -38,45 +30,18 @@
         </columns>
 
         <items>
-          <ColumnListItem id="_IDGenColumnListItem1">
+          <ColumnListItem id="_IDGenColumnListItem4" type="Navigation" press=".onOpenItems">
             <cells>
-
-              <!-- ✅ UUID: display only -->
               <Text id="_IDGenText41" text="{po>ID}"/>
-
-              <!-- editable -->
-              <Input id="_IDGenInput1" value="{po>poNumber}" placeholder="PO1001"/>
-
-              <!-- ✅ Association: vendor_ID is UUID -> pick by code/name -->
-              <ComboBox id="_IDGenComboBox"
-                selectedKey="{po>vendor_ID}"
-                items="{md>/VendorMaster}">
-                <core:Item id="_IDGenItem" key="{md>ID}" text="{md>vendorCode}"/>
-              </ComboBox>
-
-              <DatePicker id="_IDGenDatePicker" value="{po>documentDate}" valueFormat="yyyy-MM-dd" displayFormat="MMM d, yyyy"/>
-              <DatePicker id="_IDGenDatePicker1" value="{po>deliveryDate}" valueFormat="yyyy-MM-dd" displayFormat="MMM d, yyyy"/>
-
-              <Input id="_IDGenInput2" value="{po>currency}" placeholder="INR" width="5rem"/>
-
-              <Select id="_IDGenSelect" selectedKey="{po>paymentTerms}">
-                <core:Item id="_IDGenItem1" key="days30" text="30Days"/>
-                <core:Item id="_IDGenItem2" key="days45" text="45Days"/>
-                <core:Item id="_IDGenItem3" key="na"     text="N/A"/>
-              </Select>
-
-              <Input id="_IDGenInput3" value="{po>totalValue}" type="Number" placeholder="0.00"/>
-
-              <Select id="_IDGenSelect1" selectedKey="{po>status}">
-                <core:Item id="_IDGenItem4" key="draft"     text="draft"/>
-                <core:Item id="_IDGenItem5" key="submitted" text="submitted"/>
-                <core:Item id="_IDGenItem6" key="approved"  text="approved"/>
-                <core:Item id="_IDGenItem7" key="rejected"  text="rejected"/>
-                <core:Item id="_IDGenItem8" key="closed"    text="closed"/>
-                <core:Item id="_IDGenItem9" key="cancelled" text="cancelled"/>
-              </Select>
-
-              <Input id="_IDGenInput4" value="{po>remarks}" placeholder="Remarks"/>
+              <Text id="_IDGenText42" text="{po>poNumber}"/>
+              <Text id="_IDGenText208" text="{po>vendor_ID}"/>
+              <Text id="_IDGenText209" text="{po>documentDate}"/>
+              <Text id="_IDGenText210" text="{po>deliveryDate}"/>
+              <Text id="_IDGenText211" text="{po>currency}"/>
+              <Text id="_IDGenText212" text="{po>paymentTerms}"/>
+              <Text id="_IDGenText213" text="{po>totalValue}"/>
+              <Text id="_IDGenText214" text="{po>status}"/>
+              <Text id="_IDGenText215" text="{po>remarks}"/>
             </cells>
           </ColumnListItem>
         </items>

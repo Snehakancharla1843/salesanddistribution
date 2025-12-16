@@ -1,0 +1,84 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### SDAuditLog
+# @name SDAuditLog_GET
+GET {{server}}/odata/v4/monitoring/SDAuditLog
+Authorization: Basic {{username}}:{{password}}
+
+
+### SDAuditLog
+# @name SDAuditLog_POST
+POST {{server}}/odata/v4/monitoring/SDAuditLog
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "80983596-b81d-4450-b2f5-2642c0799f20",
+  "businessObject": "businessObject-8098359",
+  "refDocumentNo": "refDocumentNo-8098359",
+  "refEntity": "refEntity-8098359",
+  "messageType": "pe-8098359",
+  "messageCode": "messageCode-8098359",
+  "messageText": "messageText-8098359",
+  "status": "status-8098359",
+  "audit": {
+    "createdAt": "2014-07-24T00:00:00.000Z",
+    "createdBy": "createdBy.4tkqf@example.org",
+    "modifiedAt": "2015-08-28T00:00:00.000Z",
+    "modifiedBy": "modifiedBy.4tkqf@example.com",
+    "audit": "it-8098359",
+    "auditat": "2013-11-07T00:00:00.000Z",
+    "verifiedby": "by-8098359",
+    "verifiedat": "2022-07-29T00:00:00.000Z",
+    "approvedby": "by-8098359",
+    "approvedat": "2015-01-12T00:00:00.000Z"
+  },
+  "createdAt": "2007-03-28T00:00:00.000Z",
+  "createdBy": "createdBy.4tkqf@example.com",
+  "modifiedAt": "2022-05-30T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.4tkqf@example.org"
+}
+
+
+### SDAuditLog
+# @name SDAuditLog_PATCH
+PATCH {{server}}/odata/v4/monitoring/SDAuditLog/80983596-b81d-4450-b2f5-2642c0799f20
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "80983596-b81d-4450-b2f5-2642c0799f20",
+  "businessObject": "businessObject-8098359",
+  "refDocumentNo": "refDocumentNo-8098359",
+  "refEntity": "refEntity-8098359",
+  "messageType": "pe-8098359",
+  "messageCode": "messageCode-8098359",
+  "messageText": "messageText-8098359",
+  "status": "status-8098359",
+  "audit": {
+    "createdAt": "2014-07-24T00:00:00.000Z",
+    "createdBy": "createdBy.4tkqf@example.org",
+    "modifiedAt": "2015-08-28T00:00:00.000Z",
+    "modifiedBy": "modifiedBy.4tkqf@example.com",
+    "audit": "it-8098359",
+    "auditat": "2013-11-07T00:00:00.000Z",
+    "verifiedby": "by-8098359",
+    "verifiedat": "2022-07-29T00:00:00.000Z",
+    "approvedby": "by-8098359",
+    "approvedat": "2015-01-12T00:00:00.000Z"
+  },
+  "createdAt": "2007-03-28T00:00:00.000Z",
+  "createdBy": "createdBy.4tkqf@example.com",
+  "modifiedAt": "2022-05-30T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.4tkqf@example.org"
+}
+
+
+### SDAuditLog
+# @name SDAuditLog_DELETE
+DELETE {{server}}/odata/v4/monitoring/SDAuditLog/80983596-b81d-4450-b2f5-2642c0799f20
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

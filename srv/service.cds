@@ -9,11 +9,15 @@ service MasterDataService {
 
 @path : 'purchase-orders'
 service PurchaseOrderService {
-  @(odata.draft.enabled: true)
+
+  @(odata.draft.enabled: true, odata.draft.bypass: true)
   entity PurchaseOrderHeader as projection on db.PurchaseOrderHeader;
 
-  entity PurchaseOrderItem   as projection on db.PurchaseOrderItem;
+  @odata.draft.bypass
+  entity PurchaseOrderItem as projection on db.PurchaseOrderItem;
+
 }
+
 
 @path : 'sales-inquiry'
 service SalesInquiryService {

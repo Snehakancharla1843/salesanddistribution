@@ -173,7 +173,7 @@ entity Material : primary {
 @Core.Description : 'Purchase Order Header'
 entity PurchaseOrderHeader @(odata.draft.enabled) : primary {
   @Common.Label : 'PO ID'
-  key ID          : UUID;
+  key ID          : String;
 
   @Common.Label : 'PO Number'
   poNumber        : String(20);
@@ -197,7 +197,7 @@ entity PurchaseOrderHeader @(odata.draft.enabled) : primary {
 @Core.Description : 'Purchase Order Item'
 entity PurchaseOrderItem : primary {
   @Common.Label : 'PO Item ID'
-  key ID          : UUID;
+  key ID          : String;
 
   header          : Association to PurchaseOrderHeader;         // back N:1 PurchaseOrderItem → PurchaseOrderHeader (child → parent)
   material        : Association to Material;                    // back N:1 PurchaseOrderItem → Material (child → parent)

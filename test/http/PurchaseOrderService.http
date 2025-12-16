@@ -1,0 +1,95 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+##############################
+# PURCHASE ORDER HEADER
+##############################
+
+### GET All Purchase Orders
+GET {{server}}/odata/v4/purchase-orders/PurchaseOrderHeader
+Authorization: Basic {{username}}:{{password}}
+
+###
+
+### CREATE Purchase Order Header
+POST {{server}}/odata/v4/purchase-orders/PurchaseOrderHeader
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "poNumber": "PO-20001",
+  "documentDate": "2025-01-15",
+  "deliveryDate": "2025-01-25",
+  "currency": "INR",
+  "paymentTerms": "45DAYS",
+  "status": "CREATED",
+  "remarks": "Normal PO Header"
+}
+
+###
+
+### UPDATE Purchase Order Header
+PATCH {{server}}/odata/v4/purchase-orders/PurchaseOrderHeader(PO-UUID-HERE)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "remarks": "Updated PO header remarks",
+  "status": "APPROVED"
+}
+
+###
+
+### DELETE Purchase Order Header
+DELETE {{server}}/odata/v4/purchase-orders/PurchaseOrderHeader(PO-UUID-HERE)
+Authorization: Basic {{username}}:{{password}}
+
+###
+
+##############################
+# PURCHASE ORDER ITEMS
+##############################
+
+### GET All Purchase Order Items
+GET {{server}}/odata/v4/purchase-orders/PurchaseOrderItem
+Authorization: Basic {{username}}:{{password}}
+
+###
+
+### CREATE Purchase Order Item
+POST {{server}}/odata/v4/purchase-orders/PurchaseOrderItem
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "header_ID": "PO-UUID-HERE",
+  "lineItemNo": 10,
+  "quantity": {
+    "order_quan": 5
+  },
+  "uom": "EA",
+  "netPrice": 1000,
+  "discountPercent": 10,
+  "gstPercent": 18
+}
+
+###
+
+### UPDATE Purchase Order Item
+PATCH {{server}}/odata/v4/purchase-orders/PurchaseOrderItem(ITEM-UUID-HERE)
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "quantity": {
+    "order_quan": 8
+  },
+  "netPrice": 1200
+}
+
+###
+
+### DELETE Purchase Order Item
+DELETE {{server}}/odata/v4/purchase-orders/PurchaseOrderItem(ITEM-UUID-HERE)
+Authorization: Basic {{username}}:{{password}}
